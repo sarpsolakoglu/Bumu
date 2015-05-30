@@ -30,6 +30,8 @@
 		E9AB829E1B19A2BD00174BBF /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB829D1B19A2BD00174BBF /* GettingStartedViewController.swift */; };
 		E9AB82A01B19A31200174BBF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB829F1B19A31200174BBF /* MainTabBarController.swift */; };
 		E9AB82A21B19A3B900174BBF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A11B19A3B900174BBF /* BaseViewController.swift */; };
+		E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */; };
+		E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		E9AB829D1B19A2BD00174BBF /* GettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettingStartedViewController.swift; sourceTree = "<group>"; };
 		E9AB829F1B19A31200174BBF /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E9AB82A11B19A3B900174BBF /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 		E9368CC11B1900A9009E3D1B /* bumu */ = {
 			isa = PBXGroup;
 			children = (
+				E9AB82A31B19E6EE00174BBF /* ThirdParty */,
 				E92A6EA01B1908C000E91EA3 /* Frameworks */,
 				E9AB829D1B19A2BD00174BBF /* GettingStartedViewController.swift */,
 				E9AB82A11B19A3B900174BBF /* BaseViewController.swift */,
@@ -184,6 +189,23 @@
 				E9368CD91B1900A9009E3D1B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9AB82A31B19E6EE00174BBF /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				E9AB82A41B19E6FE00174BBF /* BWWalkthrough */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		E9AB82A41B19E6FE00174BBF /* BWWalkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */,
+				E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */,
+			);
+			path = BWWalkthrough;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +316,10 @@
 			files = (
 				E9368CC51B1900A9009E3D1B /* AppDelegate.swift in Sources */,
 				E9AB82A21B19A3B900174BBF /* BaseViewController.swift in Sources */,
+				E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */,
 				E9AB829E1B19A2BD00174BBF /* GettingStartedViewController.swift in Sources */,
 				E9AB82A01B19A31200174BBF /* MainTabBarController.swift in Sources */,
+				E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
