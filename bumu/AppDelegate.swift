@@ -46,6 +46,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
         }
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+    
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let currentUser = PFUser.currentUser() {
+            window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as? UITabBarController
+        } else {
+            window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("GettingStartedViewController") as? UIViewController
+        }
+        
+        window?.makeKeyAndVisible()
         return true
     }
 
