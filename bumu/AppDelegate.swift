@@ -12,16 +12,13 @@ import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    let parseApplicationId = "REFtmXF6CAGQtVeCaQkwj8zCwSBG00l9LtBJ1oV6"
-    let parseClientKey = "6UMZz7zH1MNhcUCIfx96V96xFOEhKrjQPYiw2aH7"
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Parse.setApplicationId(parseApplicationId,
-            clientKey:parseClientKey)
+        Parse.setApplicationId(Parse_Application_Id,
+            clientKey: Parse_Client_Key)
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         // Register for Push Notitications
@@ -53,9 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let currentUser = PFUser.currentUser() {
-            window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("MainTabBarController") as? UITabBarController
+            window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier(MainTabBarController_Identifier) as? UITabBarController
         } else {
-            window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("GettingStartedViewController") as? UIViewController
+            window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier(GettingStartedViewController_Identifier) as? UIViewController
         }
         
         window?.makeKeyAndVisible()
