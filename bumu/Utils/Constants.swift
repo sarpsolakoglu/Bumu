@@ -10,4 +10,4 @@ let Parse_Client_Key = "6UMZz7zH1MNhcUCIfx96V96xFOEhKrjQPYiw2aH7"
 
 //View Controller Identifiers
 let MainTabBarController_Identifier = "MainTabBarController"
-let GettingStartedViewController_Identifier = "GettingStartedViewController"
+let LoginViewController_Identifier = "LoginViewController"
