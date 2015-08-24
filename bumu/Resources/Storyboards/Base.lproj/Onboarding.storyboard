@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9X2-DP-0E8">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="7hF-DV-eKd">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="9X2-DP-0E8" customClass="LoginViewController" customModule="bumu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sda-4X-UXO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y1n-12-zFG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zcy-80-N36">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting started" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND0-cj-upk">
+                                <rect key="frame" x="242" y="290" width="115" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pd-67-Hr5">
+                                <rect key="frame" x="277" y="368" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="9X2-DP-0E8" eventType="touchUpInside" id="Ou5-Xb-LN0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuj-Cm-nje">
+                                <rect key="frame" x="282" y="330" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="9X2-DP-0E8" eventType="touchUpInside" id="Vg7-T9-UdZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yuj-Cm-nje" firstAttribute="centerX" secondItem="7Pd-67-Hr5" secondAttribute="centerX" constant="-0.5" id="5ke-73-J6G"/>
+                            <constraint firstItem="yuj-Cm-nje" firstAttribute="top" secondItem="ND0-cj-upk" secondAttribute="bottom" constant="19.5" id="6iL-4w-f8W"/>
+                            <constraint firstItem="yuj-Cm-nje" firstAttribute="centerX" secondItem="ND0-cj-upk" secondAttribute="centerX" constant="1.5" id="8Z3-3Q-Vqa"/>
+                            <constraint firstItem="7Pd-67-Hr5" firstAttribute="top" secondItem="yuj-Cm-nje" secondAttribute="bottom" constant="8" id="AmD-Tj-aAN"/>
+                            <constraint firstAttribute="centerY" secondItem="ND0-cj-upk" secondAttribute="centerY" id="Bfc-e8-JOY"/>
+                            <constraint firstAttribute="centerX" secondItem="ND0-cj-upk" secondAttribute="centerX" id="CTL-iI-927"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="promptLabel" destination="ND0-cj-upk" id="DoI-hs-mwY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckD-q6-vx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="894"/>
+        </scene>
+    </scenes>
+</document>

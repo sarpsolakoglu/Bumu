@@ -53,13 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
     
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        //if let currentUser = PFUser.currentUser() {
-        //    window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier(MainTabBarController_Identifier) as? UITabBarController
-        //} else {
-            window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier(LoginViewController_Identifier) as? UIViewController
-        //}
+        if let currentUser = PFUser.currentUser() {
+            let storyboard = UIStoryboard.main()
+            window?.rootViewController = storyboard.instantiateInitialViewController() as? UITabBarController
+        } else {
+            let storyboard = UIStoryboard.onboarding()
+            window?.rootViewController = storyboard.instantiateInitialViewController() as? UIViewController
+        }
         
         window?.makeKeyAndVisible()
         return true

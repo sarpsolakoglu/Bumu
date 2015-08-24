@@ -11,3 +11,7 @@ let Parse_Client_Key = "6UMZz7zH1MNhcUCIfx96V96xFOEhKrjQPYiw2aH7"
 //View Controller Identifiers
 let MainTabBarController_Identifier = "MainTabBarController"
 let LoginViewController_Identifier = "LoginViewController"
+
+//Storyboard Identifiers
+let OnboardingStoryboard_Identifier = "Onboarding"
+let MainStoryboard_Identifier = "Main"

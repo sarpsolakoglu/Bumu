@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "Ezi-ru-44p"; */
+"Ezi-ru-44p.title" = "Item 2";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "Hqg-0l-sSZ"; */
+"Hqg-0l-sSZ.normalTitle" = "Logout";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "SGG-af-qlP"; */
+"SGG-af-qlP.title" = "Item 1";
+
+/* Class = "UILabel"; text = "Getting started"; ObjectID = "oTV-ac-4e1"; */
+"oTV-ac-4e1.text" = "Getting started";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "qhA-Rp-qLU"; */
+"qhA-Rp-qLU.normalTitle" = "Login";
