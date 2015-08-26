@@ -19,9 +19,22 @@
 		E9596AE81B8B51EF00B13C4A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE31B8B51EF00B13C4A /* BaseViewController.swift */; };
 		E9596AE91B8B51EF00B13C4A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE51B8B51EF00B13C4A /* MainTabBarController.swift */; };
 		E9596AEA1B8B51EF00B13C4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE71B8B51EF00B13C4A /* LoginViewController.swift */; };
+		E98073D11B8BB10000145FAF /* Dosis-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CA1B8BB10000145FAF /* Dosis-Bold.ttf */; };
+		E98073D21B8BB10000145FAF /* Dosis-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CB1B8BB10000145FAF /* Dosis-ExtraBold.ttf */; };
+		E98073D41B8BB10000145FAF /* Dosis-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CD1B8BB10000145FAF /* Dosis-Light.ttf */; };
+		E98073D51B8BB10000145FAF /* Dosis-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CE1B8BB10000145FAF /* Dosis-Medium.ttf */; };
+		E98073D61B8BB10000145FAF /* Dosis-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CF1B8BB10000145FAF /* Dosis-Book.ttf */; };
+		E98073D91B8BB12800145FAF /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98073D81B8BB12800145FAF /* FontUtils.swift */; };
+		E98073DB1B8BB65000145FAF /* Onboarding.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E98073DA1B8BB65000145FAF /* Onboarding.xcassets */; };
+		E98517341B8C67B90091481A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98517331B8C67B90091481A /* SignupViewController.swift */; };
+		E98517361B8C69700091481A /* ObjectUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98517351B8C69700091481A /* ObjectUtils.swift */; };
+		E98517371B8C6D0B0091481A /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98517391B8C6D0B0091481A /* Signup.storyboard */; };
+		E985173E1B8C8A4F0091481A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985173D1B8C8A4F0091481A /* User.swift */; };
+		E98517401B8C90EB0091481A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985173F1B8C90EB0091481A /* Utils.swift */; };
 		E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */; };
 		E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */; };
 		E9BB72901B77BD3C00A0B98B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BB728F1B77BD3C00A0B98B /* Foundation.framework */; };
+		E9D82E8D1B8E4B3F0062A844 /* FacebookUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D82E8C1B8E4B3F0062A844 /* FacebookUtils.swift */; };
 		ECDA5DDBA5FB0D1A04EB5366 /* Pods_bumu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169F953F8A4D7457E4ECADD /* Pods_bumu.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -49,17 +62,28 @@
 		E9596AC61B8B4C6300B13C4A /* Splash.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Splash.xcassets; sourceTree = "<group>"; };
 		E9596AC91B8B4C6300B13C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E9596ACE1B8B4C6300B13C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E9596AD71B8B4C7E00B13C4A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		E9596AD81B8B4C9100B13C4A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E9596ADC1B8B4D1D00B13C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
-		E9596ADF1B8B4D2000B13C4A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Onboarding.strings; sourceTree = "<group>"; };
 		E9596AE01B8B4DB200B13C4A /* StoryboardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardUtils.swift; sourceTree = "<group>"; };
 		E9596AE31B8B51EF00B13C4A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E9596AE51B8B51EF00B13C4A /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E9596AE71B8B51EF00B13C4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E98073CA1B8BB10000145FAF /* Dosis-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.ttf"; sourceTree = "<group>"; };
+		E98073CB1B8BB10000145FAF /* Dosis-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E98073CD1B8BB10000145FAF /* Dosis-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Light.ttf"; sourceTree = "<group>"; };
+		E98073CE1B8BB10000145FAF /* Dosis-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Medium.ttf"; sourceTree = "<group>"; };
+		E98073CF1B8BB10000145FAF /* Dosis-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Book.ttf"; sourceTree = "<group>"; };
+		E98073D81B8BB12800145FAF /* FontUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
+		E98073DA1B8BB65000145FAF /* Onboarding.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Onboarding.xcassets; sourceTree = "<group>"; };
+		E98517331B8C67B90091481A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E98517351B8C69700091481A /* ObjectUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectUtils.swift; sourceTree = "<group>"; };
+		E98517381B8C6D0B0091481A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
+		E985173D1B8C8A4F0091481A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E985173F1B8C90EB0091481A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		E9BB728F1B77BD3C00A0B98B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E9D82E8C1B8E4B3F0062A844 /* FacebookUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookUtils.swift; sourceTree = "<group>"; };
 		EB3EF31D42646EF087BC11C8 /* Pods-bumu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bumu.release.xcconfig"; path = "Pods/Target Support Files/Pods-bumu/Pods-bumu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +112,10 @@
 			children = (
 				70B398EE0E4FE10C81788E87 /* Constants.swift */,
 				E9596AE01B8B4DB200B13C4A /* StoryboardUtils.swift */,
+				E98073D81B8BB12800145FAF /* FontUtils.swift */,
+				E98517351B8C69700091481A /* ObjectUtils.swift */,
+				E985173F1B8C90EB0091481A /* Utils.swift */,
+				E9D82E8C1B8E4B3F0062A844 /* FacebookUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -133,6 +161,7 @@
 		E9368CC11B1900A9009E3D1B /* bumu */ = {
 			isa = PBXGroup;
 			children = (
+				E985173C1B8C8A220091481A /* Models */,
 				E9596AE21B8B518200B13C4A /* ViewControllers */,
 				E9596AC31B8B4C6300B13C4A /* Resources */,
 				E9AB82A31B19E6EE00174BBF /* ThirdParty */,
@@ -171,6 +200,7 @@
 		E9596AC31B8B4C6300B13C4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E98073C91B8BB0F200145FAF /* Fonts */,
 				E9596AC41B8B4C6300B13C4A /* Assets */,
 				E9596AC71B8B4C6300B13C4A /* Lauch Screen */,
 				E9596ACC1B8B4C6300B13C4A /* Storyboards */,
@@ -183,6 +213,7 @@
 			children = (
 				E9596AC51B8B4C6300B13C4A /* Images.xcassets */,
 				E9596AC61B8B4C6300B13C4A /* Splash.xcassets */,
+				E98073DA1B8BB65000145FAF /* Onboarding.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -200,6 +231,7 @@
 			children = (
 				E9596ACD1B8B4C6300B13C4A /* Main.storyboard */,
 				E9596ADD1B8B4D1D00B13C4A /* Onboarding.storyboard */,
+				E98517391B8C6D0B0091481A /* Signup.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -207,6 +239,7 @@
 		E9596AE21B8B518200B13C4A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E98517321B8C67880091481A /* Sign up */,
 				E9596AE31B8B51EF00B13C4A /* BaseViewController.swift */,
 				E9596AE41B8B51EF00B13C4A /* Main */,
 				E9596AE61B8B51EF00B13C4A /* Onboarding */,
@@ -228,6 +261,34 @@
 				E9596AE71B8B51EF00B13C4A /* LoginViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E98073C91B8BB0F200145FAF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E98073CA1B8BB10000145FAF /* Dosis-Bold.ttf */,
+				E98073CB1B8BB10000145FAF /* Dosis-ExtraBold.ttf */,
+				E98073CD1B8BB10000145FAF /* Dosis-Light.ttf */,
+				E98073CE1B8BB10000145FAF /* Dosis-Medium.ttf */,
+				E98073CF1B8BB10000145FAF /* Dosis-Book.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E98517321B8C67880091481A /* Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				E98517331B8C67B90091481A /* SignupViewController.swift */,
+			);
+			path = "Sign up";
+			sourceTree = "<group>";
+		};
+		E985173C1B8C8A220091481A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E985173D1B8C8A4F0091481A /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E9AB82A31B19E6EE00174BBF /* ThirdParty */ = {
@@ -337,11 +398,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98073D11B8BB10000145FAF /* Dosis-Bold.ttf in Resources */,
+				E98073D41B8BB10000145FAF /* Dosis-Light.ttf in Resources */,
 				E9596AD21B8B4C6300B13C4A /* Splash.xcassets in Resources */,
 				E9596ADB1B8B4D1D00B13C4A /* Onboarding.storyboard in Resources */,
 				E9596AD51B8B4C6300B13C4A /* Main.storyboard in Resources */,
+				E98073D51B8BB10000145FAF /* Dosis-Medium.ttf in Resources */,
+				E98073D21B8BB10000145FAF /* Dosis-ExtraBold.ttf in Resources */,
 				E9596AD31B8B4C6300B13C4A /* LaunchScreen.xib in Resources */,
+				E98073D61B8BB10000145FAF /* Dosis-Book.ttf in Resources */,
 				E9596AD11B8B4C6300B13C4A /* Images.xcassets in Resources */,
+				E98517371B8C6D0B0091481A /* Signup.storyboard in Resources */,
+				E98073DB1B8BB65000145FAF /* Onboarding.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,10 +477,16 @@
 			files = (
 				E9368CC51B1900A9009E3D1B /* AppDelegate.swift in Sources */,
 				E9596AE11B8B4DB200B13C4A /* StoryboardUtils.swift in Sources */,
+				E98517341B8C67B90091481A /* SignupViewController.swift in Sources */,
 				E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */,
 				E9596AE91B8B51EF00B13C4A /* MainTabBarController.swift in Sources */,
+				E98517401B8C90EB0091481A /* Utils.swift in Sources */,
+				E98073D91B8BB12800145FAF /* FontUtils.swift in Sources */,
+				E9D82E8D1B8E4B3F0062A844 /* FacebookUtils.swift in Sources */,
 				E9596AEA1B8B51EF00B13C4A /* LoginViewController.swift in Sources */,
 				E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */,
+				E985173E1B8C8A4F0091481A /* User.swift in Sources */,
+				E98517361B8C69700091481A /* ObjectUtils.swift in Sources */,
 				70B39FB01C9EEECF418D8300 /* Constants.swift in Sources */,
 				E9596AE81B8B51EF00B13C4A /* BaseViewController.swift in Sources */,
 			);
@@ -450,7 +524,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9596ACE1B8B4C6300B13C4A /* Base */,
-				E9596AD71B8B4C7E00B13C4A /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -459,9 +532,16 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9596ADC1B8B4D1D00B13C4A /* Base */,
-				E9596ADF1B8B4D2000B13C4A /* tr */,
 			);
 			name = Onboarding.storyboard;
+			sourceTree = "<group>";
+		};
+		E98517391B8C6D0B0091481A /* Signup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E98517381B8C6D0B0091481A /* Base */,
+			);
+			name = Signup.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

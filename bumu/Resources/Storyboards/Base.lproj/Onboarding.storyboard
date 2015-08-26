@@ -1,63 +1,312 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9X2-DP-0E8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="94y-Hi-mTb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Dosis-Bold.ttf">
+            <string>Dosis-Bold</string>
+            <string>Dosis-Bold</string>
+            <string>Dosis-Bold</string>
+        </mutableArray>
+        <mutableArray key="Dosis-Medium.ttf">
+            <string>Dosis-Medium</string>
+            <string>Dosis-Medium</string>
+            <string>Dosis-Medium</string>
+            <string>Dosis-Medium</string>
+            <string>Dosis-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--Login View Controller-->
-        <scene sceneID="7hF-DV-eKd">
+        <!--Walkthrough View Controller-->
+        <scene sceneID="OcV-FR-j20">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="9X2-DP-0E8" customClass="LoginViewController" customModule="bumu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboarding_container" id="94y-Hi-mTb" customClass="BWWalkthroughViewController" customModule="bumu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Sda-4X-UXO"/>
-                        <viewControllerLayoutGuide type="bottom" id="Y1n-12-zFG"/>
+                        <viewControllerLayoutGuide type="top" id="829-R1-e5x"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tzj-hu-1eU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zcy-80-N36">
+                    <view key="view" contentMode="scaleToFill" id="NR0-4Z-dUx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting started" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND0-cj-upk">
-                                <rect key="frame" x="242" y="290" width="115" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ao7-ia-8cD">
+                                <rect key="frame" x="0.0" y="510" width="600" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvf-8M-4LG">
+                                        <rect key="frame" x="14" y="15" width="526" height="60"/>
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.3529411764705882" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Meg-Uu-FlN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Facebook ile bağlan" image="bm_facebook">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="facebookButtonTouched:" destination="94y-Hi-mTb" eventType="touchUpInside" id="gzG-ID-EJo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4h3-Oe-wTJ">
+                                        <rect key="frame" x="556" y="31" width="27" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="fWg-ud-UcJ"/>
+                                            <constraint firstAttribute="width" constant="27" id="yZO-iO-1cz"/>
+                                        </constraints>
+                                        <state key="normal" image="bm_onboarding_info"/>
+                                        <connections>
+                                            <action selector="infoButtonTouched:" destination="94y-Hi-mTb" eventType="touchUpInside" id="gii-rJ-roD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kvf-8M-4LG" firstAttribute="leading" secondItem="ao7-ia-8cD" secondAttribute="leading" constant="14" id="38g-WM-nNe"/>
+                                    <constraint firstAttribute="centerY" secondItem="kvf-8M-4LG" secondAttribute="centerY" id="3Gn-ap-Y7O"/>
+                                    <constraint firstAttribute="centerY" secondItem="4h3-Oe-wTJ" secondAttribute="centerY" constant="0.5" id="Wwo-AA-Cgd"/>
+                                    <constraint firstItem="4h3-Oe-wTJ" firstAttribute="leading" secondItem="kvf-8M-4LG" secondAttribute="trailing" constant="16" id="hMR-XC-u2J"/>
+                                    <constraint firstAttribute="height" constant="90" id="lRS-20-JWe"/>
+                                    <constraint firstAttribute="trailing" secondItem="4h3-Oe-wTJ" secondAttribute="trailing" constant="17" id="m4o-z9-Mc7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ao7-ia-8cD" firstAttribute="leading" secondItem="NR0-4Z-dUx" secondAttribute="leading" id="6f1-dA-Y9x"/>
+                            <constraint firstItem="Tzj-hu-1eU" firstAttribute="top" secondItem="ao7-ia-8cD" secondAttribute="bottom" id="DL4-J3-OXa"/>
+                            <constraint firstAttribute="trailing" secondItem="ao7-ia-8cD" secondAttribute="trailing" id="k3M-di-II3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AQV-h4-zjg"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomView" destination="ao7-ia-8cD" id="SYg-cl-W7Q"/>
+                        <outlet property="facebookButton" destination="kvf-8M-4LG" id="o58-2i-nzE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPS-BW-Cqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="894"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="AtT-Bg-6fz">
+            <objects>
+                <viewController storyboardIdentifier="onboarding_page_one" id="U5h-hp-k53" customClass="BWWalkthroughPageViewController" customModule="bumu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ooT-rQ-A6U"/>
+                        <viewControllerLayoutGuide type="bottom" id="P5Y-dh-8sh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AT7-fw-YxA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bm_splash_red_bg" translatesAutoresizingMaskIntoConstraints="NO" id="kwR-19-GDB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bm_onboarding_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3lN-i3-j5e">
+                                <rect key="frame" x="225" y="87" width="151" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3lN-i3-j5e" secondAttribute="height" multiplier="31:38" id="jaL-zH-KjB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kararsızlığın çözümü: Tanıdıkların!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2IS-Xt-MfF">
+                                <rect key="frame" x="0.0" y="307" width="600" height="38"/>
+                                <fontDescription key="fontDescription" name="Dosis-Bold" family="Dosis" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pd-67-Hr5">
-                                <rect key="frame" x="277" y="368" width="49" height="30"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logout:" destination="9X2-DP-0E8" eventType="touchUpInside" id="Ou5-Xb-LN0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuj-Cm-nje">
-                                <rect key="frame" x="282" y="330" width="38" height="30"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="login:" destination="9X2-DP-0E8" eventType="touchUpInside" id="Vg7-T9-UdZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yuj-Cm-nje" firstAttribute="centerX" secondItem="7Pd-67-Hr5" secondAttribute="centerX" constant="-0.5" id="5ke-73-J6G"/>
-                            <constraint firstItem="yuj-Cm-nje" firstAttribute="top" secondItem="ND0-cj-upk" secondAttribute="bottom" constant="19.5" id="6iL-4w-f8W"/>
-                            <constraint firstItem="yuj-Cm-nje" firstAttribute="centerX" secondItem="ND0-cj-upk" secondAttribute="centerX" constant="1.5" id="8Z3-3Q-Vqa"/>
-                            <constraint firstItem="7Pd-67-Hr5" firstAttribute="top" secondItem="yuj-Cm-nje" secondAttribute="bottom" constant="8" id="AmD-Tj-aAN"/>
-                            <constraint firstAttribute="centerY" secondItem="ND0-cj-upk" secondAttribute="centerY" id="Bfc-e8-JOY"/>
-                            <constraint firstAttribute="centerX" secondItem="ND0-cj-upk" secondAttribute="centerX" id="CTL-iI-927"/>
+                            <constraint firstItem="kwR-19-GDB" firstAttribute="height" secondItem="3lN-i3-j5e" secondAttribute="height" multiplier="13:4" id="6EW-gJ-A5l"/>
+                            <constraint firstItem="2IS-Xt-MfF" firstAttribute="top" secondItem="3lN-i3-j5e" secondAttribute="bottom" constant="35" id="Dht-wN-rn0"/>
+                            <constraint firstItem="kwR-19-GDB" firstAttribute="top" secondItem="AT7-fw-YxA" secondAttribute="top" id="Mpk-2c-9Vm"/>
+                            <constraint firstItem="P5Y-dh-8sh" firstAttribute="top" secondItem="kwR-19-GDB" secondAttribute="bottom" id="ROj-5A-ThM"/>
+                            <constraint firstItem="kwR-19-GDB" firstAttribute="width" secondItem="2IS-Xt-MfF" secondAttribute="width" id="l27-VG-6g5"/>
+                            <constraint firstItem="kwR-19-GDB" firstAttribute="centerY" secondItem="3lN-i3-j5e" secondAttribute="centerY" constant="120" id="m7D-OR-ElS"/>
+                            <constraint firstAttribute="trailing" secondItem="kwR-19-GDB" secondAttribute="trailing" id="mQd-EQ-kQw"/>
+                            <constraint firstItem="kwR-19-GDB" firstAttribute="leading" secondItem="AT7-fw-YxA" secondAttribute="leading" id="rrV-af-UwB"/>
+                            <constraint firstItem="kwR-19-GDB" firstAttribute="centerX" secondItem="3lN-i3-j5e" secondAttribute="centerX" id="tNh-zl-G0p"/>
+                            <constraint firstItem="kwR-19-GDB" firstAttribute="centerX" secondItem="2IS-Xt-MfF" secondAttribute="centerX" id="wc4-FV-eEZ"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="promptLabel" destination="ND0-cj-upk" id="DoI-hs-mwY"/>
-                    </connections>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateAlpha" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="InOut"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ckD-q6-vx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Puc-ce-LNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="894"/>
+            <point key="canvasLocation" x="2476" y="894"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="7KG-Fu-khy">
+            <objects>
+                <viewController storyboardIdentifier="onboarding_page_two" id="BSi-CG-M46" customClass="BWWalkthroughPageViewController" customModule="bumu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ynG-c1-s4Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="UrG-jk-HOn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uIe-CX-edk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bm_splash_blue_bg" translatesAutoresizingMaskIntoConstraints="NO" id="3qk-d2-tE6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bm_onboarding_image_boy" translatesAutoresizingMaskIntoConstraints="NO" id="q9T-Px-rNv">
+                                <rect key="frame" x="171" y="163" width="257" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="q9T-Px-rNv" secondAttribute="height" multiplier="6:5" id="H46-9y-vUV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ne yesem?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGQ-Dl-os5">
+                                <rect key="frame" x="212" y="58" width="174.5" height="51"/>
+                                <fontDescription key="fontDescription" name="Dosis-Bold" family="Dosis" pointSize="40"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.22352941176470587" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arkadaşlarında!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izg-0a-own">
+                                <rect key="frame" x="227" y="395" width="144.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="24"/>
+                                <color key="textColor" red="0.078431372550000003" green="0.22352941179999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sorusunun cevabı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WH-W5-QXP">
+                                <rect key="frame" x="218.5" y="114" width="163" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="24"/>
+                                <color key="textColor" red="0.078431372549019607" green="0.22352941176470587" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2WH-W5-QXP" firstAttribute="centerX" secondItem="MGQ-Dl-os5" secondAttribute="centerX" id="0xP-Bq-w3s"/>
+                            <constraint firstItem="2WH-W5-QXP" firstAttribute="centerX" secondItem="q9T-Px-rNv" secondAttribute="centerX" id="4Ow-2D-JdP"/>
+                            <constraint firstItem="q9T-Px-rNv" firstAttribute="top" secondItem="2WH-W5-QXP" secondAttribute="bottom" constant="18" id="9ai-sY-XqW"/>
+                            <constraint firstItem="q9T-Px-rNv" firstAttribute="centerY" secondItem="3qk-d2-tE6" secondAttribute="centerY" constant="-30" id="BEp-ax-Pqy"/>
+                            <constraint firstItem="UrG-jk-HOn" firstAttribute="top" secondItem="3qk-d2-tE6" secondAttribute="bottom" id="LkL-1v-TDt"/>
+                            <constraint firstItem="2WH-W5-QXP" firstAttribute="top" secondItem="MGQ-Dl-os5" secondAttribute="bottom" constant="5" id="MVx-xV-85w"/>
+                            <constraint firstItem="q9T-Px-rNv" firstAttribute="height" secondItem="3qk-d2-tE6" secondAttribute="height" multiplier="5:14" id="NnG-3k-q6r"/>
+                            <constraint firstItem="3qk-d2-tE6" firstAttribute="leading" secondItem="uIe-CX-edk" secondAttribute="leading" id="U2w-pE-VMq"/>
+                            <constraint firstItem="q9T-Px-rNv" firstAttribute="centerX" secondItem="3qk-d2-tE6" secondAttribute="centerX" id="XGq-hT-3iU"/>
+                            <constraint firstItem="izg-0a-own" firstAttribute="centerX" secondItem="q9T-Px-rNv" secondAttribute="centerX" id="Z5N-xk-1K4"/>
+                            <constraint firstAttribute="trailing" secondItem="3qk-d2-tE6" secondAttribute="trailing" id="g0d-7B-UgI"/>
+                            <constraint firstItem="izg-0a-own" firstAttribute="top" secondItem="q9T-Px-rNv" secondAttribute="bottom" constant="18" id="v2v-0W-IFW"/>
+                            <constraint firstItem="3qk-d2-tE6" firstAttribute="top" secondItem="uIe-CX-edk" secondAttribute="top" id="vkl-UX-fl3"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateAlpha" value="YES"/>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="InOut"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gi-0v-bbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3126" y="894"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="TK3-Ko-dRB">
+            <objects>
+                <viewController storyboardIdentifier="onboarding_page_three" id="f9l-SC-5eJ" customClass="BWWalkthroughPageViewController" customModule="bumu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vGg-ra-v8Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="CTv-Xj-wyX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAl-Od-Edb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bm_splash_red_bg" translatesAutoresizingMaskIntoConstraints="NO" id="8wE-Ml-V4k">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bm_onboarding_image_girl" translatesAutoresizingMaskIntoConstraints="NO" id="iHE-U4-Pf1">
+                                <rect key="frame" x="171" y="163" width="257" height="214"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iHE-U4-Pf1" secondAttribute="height" multiplier="6:5" id="IDQ-Bb-CPo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ne giysem?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jb-kr-QBN">
+                                <rect key="frame" x="208" y="58" width="183" height="51"/>
+                                <fontDescription key="fontDescription" name="Dosis-Bold" family="Dosis" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kızlar grubunda!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkY-lc-mUK">
+                                <rect key="frame" x="224" y="395" width="151.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sorusunun cevabı" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T35-Ei-qXg">
+                                <rect key="frame" x="218.5" y="114" width="163" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8wE-Ml-V4k" secondAttribute="trailing" id="3v7-bx-XHO"/>
+                            <constraint firstItem="iHE-U4-Pf1" firstAttribute="centerY" secondItem="8wE-Ml-V4k" secondAttribute="centerY" constant="-30" id="5DL-kV-hT5"/>
+                            <constraint firstItem="vkY-lc-mUK" firstAttribute="centerX" secondItem="iHE-U4-Pf1" secondAttribute="centerX" id="6s1-L9-NYC"/>
+                            <constraint firstItem="8wE-Ml-V4k" firstAttribute="leading" secondItem="hAl-Od-Edb" secondAttribute="leading" id="9mL-Z3-hQ0"/>
+                            <constraint firstItem="iHE-U4-Pf1" firstAttribute="height" secondItem="8wE-Ml-V4k" secondAttribute="height" multiplier="5:14" id="Fgg-q2-o5h"/>
+                            <constraint firstItem="iHE-U4-Pf1" firstAttribute="centerX" secondItem="8wE-Ml-V4k" secondAttribute="centerX" id="Iwq-Xe-EIL"/>
+                            <constraint firstItem="T35-Ei-qXg" firstAttribute="centerX" secondItem="2jb-kr-QBN" secondAttribute="centerX" id="Mg1-Qo-MtT"/>
+                            <constraint firstItem="T35-Ei-qXg" firstAttribute="top" secondItem="2jb-kr-QBN" secondAttribute="bottom" constant="5" id="baP-ML-iTA"/>
+                            <constraint firstItem="T35-Ei-qXg" firstAttribute="centerX" secondItem="iHE-U4-Pf1" secondAttribute="centerX" id="e7H-4g-LcH"/>
+                            <constraint firstItem="iHE-U4-Pf1" firstAttribute="top" secondItem="T35-Ei-qXg" secondAttribute="bottom" constant="18" id="elN-vh-8lK"/>
+                            <constraint firstItem="8wE-Ml-V4k" firstAttribute="top" secondItem="hAl-Od-Edb" secondAttribute="top" id="o4q-Yq-rE3"/>
+                            <constraint firstItem="CTv-Xj-wyX" firstAttribute="top" secondItem="8wE-Ml-V4k" secondAttribute="bottom" id="oa0-NR-9cy"/>
+                            <constraint firstItem="vkY-lc-mUK" firstAttribute="top" secondItem="iHE-U4-Pf1" secondAttribute="bottom" constant="18" id="r0N-ze-gzv"/>
+                        </constraints>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speed">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="point" keyPath="speedVariance">
+                            <point key="value" x="1" y="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateAlpha" value="YES"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="InOut"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kiQ-Ps-0Dw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3751" y="894"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bm_facebook" width="11" height="21"/>
+        <image name="bm_onboarding_image_boy" width="298" height="238"/>
+        <image name="bm_onboarding_image_girl" width="289" height="248"/>
+        <image name="bm_onboarding_info" width="27" height="27"/>
+        <image name="bm_onboarding_logo" width="155" height="190"/>
+        <image name="bm_splash_blue_bg" width="375" height="667"/>
+        <image name="bm_splash_red_bg" width="375" height="667"/>
+    </resources>
 </document>

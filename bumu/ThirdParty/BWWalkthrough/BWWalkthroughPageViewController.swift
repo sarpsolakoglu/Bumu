@@ -51,9 +51,11 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
         subsWeights = Array()
         
         for v in view.subviews{
-            speed.x += speedVariance.x
-            speed.y += speedVariance.y
-            subsWeights.append(speed)
+            if v.tag == 0 {
+                speed.x += speedVariance.x
+                speed.y += speedVariance.y
+                subsWeights.append(speed)
+            }
         }
         
     }
@@ -63,10 +65,11 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
     func walkthroughDidScroll(position: CGFloat, offset: CGFloat) {
         
         for(var i = 0; i < subsWeights.count ;i++){
-            
-            // Perform Transition/Scale/Rotate animations
-            switch WalkthroughAnimationType.fromString(animationType){
-            
+    
+            if view.subviews[i].tag == 0 {
+                // Perform Transition/Scale/Rotate animations
+                switch WalkthroughAnimationType.fromString(animationType){
+                    
                 case WalkthroughAnimationType.Linear:
                     animationLinear(i, offset)
                     
@@ -78,12 +81,14 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
                     
                 case WalkthroughAnimationType.InOut:
                     animationInOut(i, offset)
+                }
+                
+                // Animate alpha
+                if(animateAlpha){
+                    animationAlpha(i, offset)
+                }
             }
             
-            // Animate alpha
-            if(animateAlpha){
-                animationAlpha(i, offset)
-            }
         }
     }
 

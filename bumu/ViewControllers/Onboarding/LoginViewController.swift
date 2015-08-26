@@ -12,18 +12,11 @@ import Parse
 import Bolts
 
 
-class LoginViewController: BaseViewController {
-    
-    @IBOutlet weak var promptLabel: UILabel!
+class LoginViewController: BWWalkthroughViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if PFUser.currentUser() != nil {
-            self.promptLabel.text = "logged in"
-        } else {
-            self.promptLabel.text = "logged out"
-        }
         // Do any additional setup after loading the view.
     }
 
@@ -42,21 +35,13 @@ class LoginViewController: BaseViewController {
                 } else {
                     println("user logged in")
                 }
-                self.promptLabel.text = "logged in"
             } else {
                 println("error")
             }
         });
     }
     
-    @IBAction func logout(sender:AnyObject?) {
-        PFUser.logOutInBackgroundWithBlock {[unowned self] (error) -> Void in
-            if error != nil {
-                println("error")
-            }
-            self.promptLabel.text = "logged out"
-        }
-    }
+    
 
     /*
     // MARK: - Navigation

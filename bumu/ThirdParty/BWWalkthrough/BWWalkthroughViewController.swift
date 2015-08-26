@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import TAPageControl
+import SnapKit
+import ParseFacebookUtilsV4
 
 // MARK: - Protocols -
 
@@ -39,17 +42,16 @@ At the moment it's only used to perform custom animations on didScroll.
 }
 
 
-@objc class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
+class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
     
     // MARK: - Public properties -
     
     weak var delegate:BWWalkthroughViewControllerDelegate?
     
     // TODO: If you need a page control, next or prev buttons add them via IB and connect them with these Outlets
-    @IBOutlet var pageControl:UIPageControl?
-    @IBOutlet var nextButton:UIButton?
-    @IBOutlet var prevButton:UIButton?
-    @IBOutlet var closeButton:UIButton?
+    var pageControl:TAPageControl?
+    @IBOutlet var bottomView:UIView!
+    @IBOutlet weak var facebookButton: UIButton!
     
     
     var currentPage:Int{    // The index of the current page (readonly)
@@ -95,6 +97,7 @@ At the moment it's only used to perform custom animations on didScroll.
         
         scrollview.delegate = self
         scrollview.setTranslatesAutoresizingMaskIntoConstraints(false)
+        scrollview.pagingEnabled = true
         
         view.insertSubview(scrollview, atIndex: 0) //scrollview is inserted as first view of the hierarchy
         
@@ -103,6 +106,14 @@ At the moment it's only used to perform custom animations on didScroll.
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[scrollview]-0-|", options:nil, metrics: nil, views: ["scrollview":scrollview]))
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[scrollview]-0-|", options:nil, metrics: nil, views: ["scrollview":scrollview]))
         
+        pageControl = TAPageControl()
+        view.addSubview(pageControl!)
+        pageControl?.snp_makeConstraints(closure: { (make) -> Void in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(bottomView.snp_top).offset(-20.0)
+        })
+        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -204,20 +215,6 @@ At the moment it's only used to perform custom animations on didScroll.
         // Notify delegate about the new page
         
         delegate?.walkthroughPageDidChange?(currentPage)
-        
-        // Hide/Show navigation buttons
-        
-        if currentPage == controllers.count - 1{
-            nextButton?.hidden = true
-        }else{
-            nextButton?.hidden = false
-        }
-        
-        if currentPage == 0{
-            prevButton?.hidden = true
-        }else{
-            prevButton?.hidden = false
-        }
     }
     
     // MARK: - Scrollview Delegate -
@@ -262,5 +259,33 @@ At the moment it's only used to perform custom animations on didScroll.
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         println("SIZE")
+    }
+    
+    //MARK: Own additions
+    
+    @IBAction func facebookButtonTouched(sender: AnyObject) {
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(fb_permissions, block: {(user, error) -> Void in
+            if let user = user as? User {
+                if user.isNew {
+                    Utils.appDelegate().signup()
+                    println("user needs to signup")
+                } else {
+                    if user.isActive != nil && user.isActive == true {
+                        Utils.appDelegate().login()
+                        println("logged in user")
+                    } else {
+                        Utils.appDelegate().signup()
+                        println("user needs to complete signup")
+                    }
+                }
+            } else {
+                //TODO:Error
+                println("error")
+            }
+        });
+    }
+    
+    @IBAction func infoButtonTouched(sender: AnyObject) {
+        
     }
 }

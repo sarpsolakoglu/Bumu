@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //Parse
+        self.registerParseSubclasses()
+        
         Parse.setApplicationId(Parse_Application_Id,
             clientKey: Parse_Client_Key)
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
@@ -52,13 +54,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-    
-        if let currentUser = PFUser.currentUser() {
-            let storyboard = UIStoryboard.main()
-            window?.rootViewController = storyboard.instantiateInitialViewController() as? UITabBarController
+        //onboarding, signup or login user
+        if let user = PFUser.currentUser() as? User {
+            if PFFacebookUtils.isLinkedWithUser(user) {
+                if user.isActive != nil && user.isActive == true {
+                    login()
+                    println("logged in user")
+                } else {
+                    signup()
+                    println("user needs to complete signup")
+                }
+            } else {
+                onboarding()
+            }
         } else {
-            let storyboard = UIStoryboard.onboarding()
-            window?.rootViewController = storyboard.instantiateInitialViewController() as? UIViewController
+           onboarding()
         }
         
         window?.makeKeyAndVisible()
@@ -113,7 +123,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
     }
+    
+    //MARK:Parse operations
+    
+    func registerParseSubclasses() {
+        User.registerSubclass()
+    }
+    
+    //MARK:Login Logout UI Operations
+    
+    //perform login casses on the outside and last call this
+    func login() {
+        window?.rootViewController = UIStoryboard.main().instantiateInitialViewController() as? UITabBarController
+    }
+    
+    func logout() {
+        PFUser.logOutInBackground()
+        window?.rootViewController = UIViewController.onboarding()
+    }
 
+    func signup() {
+        window?.rootViewController = UIViewController.signup()
+    }
+    
+    func onboarding() {
+        window?.rootViewController = UIViewController.onboarding()
+    }
 
 }
 
