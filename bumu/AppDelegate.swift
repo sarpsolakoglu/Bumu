@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         //onboarding, signup or login user
-        if let user = PFUser.currentUser() as? User {
+        if let user = User.currentUser() {
             if PFFacebookUtils.isLinkedWithUser(user) {
                 if user.isActive != nil && user.isActive == true {
                     login()
@@ -138,7 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func logout() {
-        PFUser.logOutInBackground()
+        User.logOutInBackground()
         window?.rootViewController = UIViewController.onboarding()
     }
 

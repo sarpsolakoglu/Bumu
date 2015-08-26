@@ -17,7 +17,7 @@ class FacebookUtils {
         
         infoRequest.startWithCompletionHandler { (connection, result, error) -> Void in
             if error == nil {
-                if let userData = result as? NSDictionary, user = PFUser.currentUser() as? User{
+                if let userData = result as? NSDictionary, user = User.currentUser() {
                     user.email = userData["email"] as? String
                     user.fullName = userData["name"] as? String
                     user.facebookId = userData["id"] as? String
@@ -47,7 +47,9 @@ class FacebookUtils {
         let friendRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters:["fields":"id"], HTTPMethod: "GET")
         friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
             if error == nil {
-                if let userData = result as? NSDictionary, user = PFUser.currentUser() as? User, friends = userData["data"] as? NSArray {
+                if let userData = result as? NSDictionary,
+                    user = User.currentUser(),
+                    friends = userData["data"] as? NSArray {
                     var friendIds = Array<String>()
                     for friend in friends {
                         friendIds.append(friend["id"] as! String)
@@ -61,7 +63,7 @@ class FacebookUtils {
     
     class func findFacebookFriends(completion:(result:Array<User>)->Void) {
         
-        if let user = PFUser.currentUser() as? User,
+        if let user = User.currentUser(),
             friendIds = user.facebookFriendIds,
             query = User.query() {
                 query.whereKey("facebookId", containedIn: friendIds)
@@ -72,7 +74,6 @@ class FacebookUtils {
                     }
                 })
         }
-        
     }
     
     /*
@@ -82,7 +83,7 @@ class FacebookUtils {
     friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
     println("facebook friends facebook result")
     if error == nil {
-    if let userData = result as? NSDictionary, user = PFUser.currentUser() as? User, friends = userData["data"] as? NSArray {
+    if let userData = result as? NSDictionary, user = User.currentUser(), friends = userData["data"] as? NSArray {
     user.facebookFriendsRelation.query()?.findObjectsInBackgroundWithBlock({ [unowned user] (result, error) -> Void in
     println("query complete")
     if error != nil {return}
