@@ -12,7 +12,7 @@ let boldFont = "Dosis-Bold"
 let extraBoldFont = "Dosis-ExtraBold"
 let lightFont = "Dosis-Light"
 let mediumFont = "Dosis-Medium"
-let bookFont = "Dosis-Book"
+let bookFont = "Dosis"
 
 extension UIFont {
     class func bookAppFont(size: CGFloat) -> UIFont {

@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension String {
+    func trim() -> String {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
+}
+
 extension NSObject {
     class var className : String {
         return NSStringFromClass(self).componentsSeparatedByString(".").last!

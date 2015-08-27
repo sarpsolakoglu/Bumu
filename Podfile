@@ -12,6 +12,7 @@ pod 'Parse', '~> 1.7'
 pod 'ParseFacebookUtilsV4', '~> 1.7'
 #ui
 pod 'TAPageControl'
+pod 'CRToast', '~> 0.0.7'
 #layout
 pod 'SnapKit'
 #animation

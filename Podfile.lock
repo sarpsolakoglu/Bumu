@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.2.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.2.0)
+  - CRToast (0.0.7)
   - FBSDKCoreKit (4.5.1):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.5.1)
@@ -30,6 +31,7 @@ PODS:
   - TAPageControl (0.2.0)
 
 DEPENDENCIES:
+  - CRToast (~> 0.0.7)
   - FBSDKCoreKit (~> 4.5)
   - FBSDKLoginKit (~> 4.5)
   - FBSDKShareKit (~> 4.5)
@@ -41,6 +43,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
   FBSDKCoreKit: f335eaf6865e1e1597dee1debfb533045500da47
   FBSDKLoginKit: 225cc9a388a92916ee3f3bb14422017b6e44b65b
   FBSDKShareKit: 642034ac9f30793dfd897851b724bb4281750266

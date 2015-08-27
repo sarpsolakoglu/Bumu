@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CRToast
 
 extension UIViewController {
+    
     class func onboarding()-> UIViewController {
         let storyboard = UIStoryboard.onboarding()
         
@@ -30,6 +32,28 @@ extension UIViewController {
     class func signup() -> UIViewController {
         let storyboard = UIStoryboard.signup()
         return storyboard.instantiateViewControllerWithIdentifier(SignupViewController.className) as! UIViewController
+    }
+    
+    func showError(text:String) {
+        self.showAlert(text, textColor: UIColor.whiteColor(), bgColor: UIColor.appRedColor())
+    }
+    
+    func showAlert(text:String,textColor:UIColor,bgColor:UIColor) {
+        var options = [kCRToastNotificationTypeKey as String:CRToastType.StatusBar.rawValue,
+            kCRToastNotificationPresentationTypeKey as String:CRToastPresentationType.Cover.rawValue,
+            kCRToastTextAlignmentKey as String:NSTextAlignment.Center.rawValue,
+            kCRToastTimeIntervalKey as String:3.0,
+            kCRToastAnimationInTypeKey as String:CRToastAnimationType.Linear.rawValue,
+            kCRToastAnimationOutTypeKey as String:CRToastAnimationType.Linear.rawValue,
+            kCRToastAnimationInDirectionKey as String:0,
+            kCRToastAnimationOutDirectionKey as String:0,
+            kCRToastFontKey as String:UIFont.bookAppFont(14)]
+        options[kCRToastTextKey as String] = text
+        options[kCRToastTextColorKey as String] = textColor
+        options[kCRToastBackgroundColorKey as String] = bgColor
+        CRToastManager.showNotificationWithOptions(options, completionBlock: { () -> Void in
+            
+        });
     }
 }
 
