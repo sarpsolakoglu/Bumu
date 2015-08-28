@@ -36,6 +36,7 @@
 		E98517371B8C6D0B0091481A /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98517391B8C6D0B0091481A /* Signup.storyboard */; };
 		E985173E1B8C8A4F0091481A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985173D1B8C8A4F0091481A /* User.swift */; };
 		E98517401B8C90EB0091481A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985173F1B8C90EB0091481A /* Utils.swift */; };
+		E99D58351B90D26D0077A812 /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99D58341B90D26D0077A812 /* Main.xcassets */; };
 		E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */; };
 		E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */; };
 		E9BB72901B77BD3C00A0B98B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BB728F1B77BD3C00A0B98B /* Foundation.framework */; };
@@ -91,6 +92,7 @@
 		E98517381B8C6D0B0091481A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
 		E985173D1B8C8A4F0091481A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E985173F1B8C90EB0091481A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		E99D58341B90D26D0077A812 /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
 		E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		E9BB728F1B77BD3C00A0B98B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -227,6 +229,7 @@
 				E9596AC51B8B4C6300B13C4A /* Images.xcassets */,
 				E9596AC61B8B4C6300B13C4A /* Splash.xcassets */,
 				E98073DA1B8BB65000145FAF /* Onboarding.xcassets */,
+				E99D58341B90D26D0077A812 /* Main.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99D58351B90D26D0077A812 /* Main.xcassets in Resources */,
 				E98073D11B8BB10000145FAF /* Dosis-Bold.ttf in Resources */,
 				E98073D41B8BB10000145FAF /* Dosis-Light.ttf in Resources */,
 				E9596AD21B8B4C6300B13C4A /* Splash.xcassets in Resources */,

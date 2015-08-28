@@ -43,7 +43,7 @@ class FacebookUtils {
         }
     }
     
-    class func syncFacebookFriends() {
+    class func syncFacebookFriends(completion:(friendIds:Array<String>?)->Void) {
         let friendRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters:["fields":"id"], HTTPMethod: "GET")
         friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
             if error == nil {
@@ -56,7 +56,10 @@ class FacebookUtils {
                     }
                     user.facebookFriendIds = friendIds
                     user.saveInBackground()
+                    completion(friendIds: friendIds)
                 }
+            } else {
+                completion(friendIds: nil)
             }
         }
     }

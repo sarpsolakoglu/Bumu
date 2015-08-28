@@ -6,4 +6,9 @@
   Copyright (c) 2015 Sarp Oğulcan Solakoğlu. All rights reserved.
 */
 
-"Hello" = "Merhaba";
+"Merhaba" = "Merhaba";
+"E-posta alanı boş olamaz." = "E-posta alanı boş olamaz.";
+"Kullanıcı adı boş olamaz." = "Kullanıcı adı boş olamaz.";
+"Bu kullanıcı adı kullanılıyor." = "Bu kullanıcı adı kullanılıyor.";
+"Facebook ile bağlantı başarısız." = "Facebook ile bağlantı başarısız.";
+"Giriş başarısız." = "Giriş başarısız.";

@@ -48,10 +48,9 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
     
     weak var delegate:BWWalkthroughViewControllerDelegate?
     
-    // TODO: If you need a page control, next or prev buttons add them via IB and connect them with these Outlets
     var pageControl:TAPageControl?
     @IBOutlet var bottomView:UIView!
-    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var facebookButton: ButtonWithActivity!
     
     
     var currentPage:Int{    // The index of the current page (readonly)
@@ -123,7 +122,6 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
         pageControl?.currentPage = 0
     }
     
-    
     // MARK: - Internal methods -
     
     @IBAction func nextPage(){
@@ -150,7 +148,6 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
         }
     }
     
-    // TODO: If you want to implement a "skip" option 
     // connect a button to this IBAction and implement the delegate with the skipWalkthrough
     @IBAction func close(sender: AnyObject){
         delegate?.walkthroughCloseButtonPressed?()
@@ -264,24 +261,25 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
     //MARK: Own additions
     
     @IBAction func facebookButtonTouched(sender: AnyObject) {
+        facebookButton.startAnimation()
         PFFacebookUtils.logInInBackgroundWithReadPermissions(fb_permissions, block: {(user, error) -> Void in
             if let user = user as? User {
                 if user.isNew {
-                    Utils.appDelegate().signup()
+                    Utils.appDelegate().signup(self)
                     println("user needs to signup")
                 } else {
                     if user.isActive != nil && user.isActive == true {
-                        Utils.appDelegate().login()
+                        Utils.appDelegate().login(self)
                         println("logged in user")
                     } else {
-                        Utils.appDelegate().signup()
+                        Utils.appDelegate().signup(self)
                         println("user needs to complete signup")
                     }
                 }
             } else {
-                //TODO:Error
-                println("error")
+                self.showError(Utils.localizedString("Facebook ile bağlantı başarısız."))
             }
+            self.facebookButton.stopAnimation()
         });
     }
     

@@ -7,6 +7,42 @@
 //
 
 import UIKit
+import SnapKit
+
+class ButtonWithActivity : UIButton {
+    
+    var activityIndicator : UIActivityIndicatorView!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupViews()
+    }
+    
+    func setupViews() {
+        activityIndicator = UIActivityIndicatorView()
+        activityIndicator.activityIndicatorViewStyle = .White
+        activityIndicator.hidesWhenStopped = true
+        addSubview(activityIndicator)
+        activityIndicator.snp_makeConstraints { (make) -> Void in
+            make.centerY.equalTo(self)
+            make.trailing.equalTo(self.snp_right).offset(-14)
+        }
+    }
+    
+    func startAnimation() {
+        enabled = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopAnimation() {
+        enabled = true
+        activityIndicator.stopAnimating()
+    }
+}
 
 class BaseView: UIView {
 

@@ -37,7 +37,7 @@
                                     <action selector="closeKeyboard:" destination="UH2-pq-bjp" eventType="touchUpInside" id="HW7-Yz-B2D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yo6-x9-caW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yo6-x9-caW" customClass="ButtonWithActivity" customModule="bumu" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="545" width="600" height="54.5"/>
                                 <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="20"/>
@@ -72,9 +72,6 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xGl-51-rAd">
                                 <rect key="frame" x="428" y="75" width="20" height="20"/>
                             </activityIndicatorView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fb4-Mz-gez">
-                                <rect key="frame" x="564" y="563" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -94,8 +91,6 @@
                             <constraint firstItem="gWL-a1-eL5" firstAttribute="width" secondItem="Nzf-5v-CgG" secondAttribute="height" multiplier="2:5" id="e2A-B7-tHX"/>
                             <constraint firstItem="idW-ON-At9" firstAttribute="top" secondItem="gWL-a1-eL5" secondAttribute="bottom" constant="30" id="fxb-N2-1yL"/>
                             <constraint firstItem="F9U-4O-rfe" firstAttribute="leading" secondItem="Nzf-5v-CgG" secondAttribute="leading" id="h2p-Np-6ao"/>
-                            <constraint firstItem="fb4-Mz-gez" firstAttribute="centerY" secondItem="Yo6-x9-caW" secondAttribute="centerY" constant="0.75" id="iR2-e0-GDY"/>
-                            <constraint firstAttribute="trailing" secondItem="fb4-Mz-gez" secondAttribute="trailing" constant="20" id="o1w-eQ-yM5"/>
                             <constraint firstItem="xGl-51-rAd" firstAttribute="centerY" secondItem="gWL-a1-eL5" secondAttribute="centerY" constant="0.5" id="txJ-eV-b5F"/>
                             <constraint firstItem="Yo6-x9-caW" firstAttribute="height" secondItem="Nzf-5v-CgG" secondAttribute="height" multiplier="1:11" id="xMI-Qh-clU"/>
                             <constraint firstAttribute="trailing" secondItem="Yo6-x9-caW" secondAttribute="trailing" id="yUk-ju-jVG"/>
@@ -105,7 +100,6 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="xGl-51-rAd" id="WKA-gQ-Kdl"/>
-                        <outlet property="buttonActivityIndicator" destination="fb4-Mz-gez" id="Nvb-eh-8Zs"/>
                         <outlet property="emailField" destination="F9U-4O-rfe" id="yBZ-tD-jvZ"/>
                         <outlet property="greetingLabel" destination="gWL-a1-eL5" id="XSc-Y5-se4"/>
                         <outlet property="keyboardBottomLayoutConstraint" destination="HDs-4l-kWl" id="SUG-Jq-beL"/>

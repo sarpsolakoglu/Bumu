@@ -12,4 +12,8 @@ class Utils {
     class func appDelegate() -> AppDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
+    
+    class func localizedString(text:String) -> String {
+       return NSLocalizedString(text, comment: "")
+    }
 }

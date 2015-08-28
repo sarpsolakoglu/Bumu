@@ -68,11 +68,9 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var greetingLabel: UILabel!
     
-    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var signupButton: ButtonWithActivity!
     
     @IBOutlet weak var activityIndicator : UIActivityIndicatorView!
-    
-    @IBOutlet weak var buttonActivityIndicator: UIActivityIndicatorView!
     
     
     var activeTextField : UITextField?
@@ -103,7 +101,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
                         self.emailField.layer.opacity = 1
                     })
                     
-                    self.greetingLabel.text = NSLocalizedString("Hello", comment: "") + " " + User.currentUser()!.firstName! + "!"
+                    self.greetingLabel.text = Utils.localizedString("Merhaba") + " " + User.currentUser()!.firstName! + "!"
                     
                     self.signupButton.enabled = true
                 })
@@ -142,7 +140,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
         emailField.layer.opacity = 0
         signupButton.enabled = false
         
-        greetingLabel.text = NSLocalizedString("Hello", comment: "")
+        greetingLabel.text = Utils.localizedString("Merhaba")
     }
     
     //MARK:Notifications
@@ -209,13 +207,13 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func signUpPressed(sender: AnyObject) {
         
         if count(emailField.text) == 0 {
-            showError(NSLocalizedString("E-posta alanı boş olamaz", comment:""))
+            showError(Utils.localizedString("E-posta alanı boş olamaz."))
             emailField.setState(.Error)
             return
         }
         
         if count(usernameField.text) == 0 {
-            showError(NSLocalizedString("Kullanıcı adı alanı boş olamaz", comment:""))
+            showError(Utils.localizedString("Kullanıcı adı boş olamaz."))
             usernameField.setState(.Error)
             return
         }
@@ -224,31 +222,32 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
         user.email = emailField.text.trim()
         user.bumuName = usernameField.text.trim()
         
-        let query = User.query()
-        
         usernameField.setState(.Default)
         emailField.setState(.Default)
         
+        let query = User.query()
+        
         query?.whereKey("bumuName", containsString: user.bumuName)
-        buttonActivityIndicator.startAnimating()
+        signupButton.startAnimation()
         query?.findObjectsInBackgroundWithBlock({ (result, error) -> Void in
             if let users = result as? Array<User> {
                 if count(users) > 0 {
-                    //TODO:Error
+                    self.showError(Utils.localizedString("Bu kullanıcı adı kullanılıyor."))
                     self.usernameField.setState(.Error)
-                    self.buttonActivityIndicator.stopAnimating()
+                    self.signupButton.stopAnimation()
                 } else {
                     user.isActive = true
                     user.saveInBackgroundWithBlock({ (success, error) -> Void in
                         if  error == nil {
                             self.usernameField.setState(.Success)
                             self.emailField.setState(.Success)
-                            FacebookUtils.syncFacebookFriends()
-                            Utils.appDelegate().login()
+                            FacebookUtils.syncFacebookFriends({ (friendIds) -> Void in
+                                Utils.appDelegate().login(self)
+                            })
                         } else {
-                            //TODO:Error
+                            self.showError(Utils.localizedString("Giriş başarısız."))
                         }
-                        self.buttonActivityIndicator.stopAnimating()
+                        self.signupButton.stopAnimation()
                     })
                 }
             }

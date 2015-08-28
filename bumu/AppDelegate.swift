@@ -71,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            onboarding()
         }
         
+        setAppearance()
+        
         window?.makeKeyAndVisible()
         return true
     }
@@ -148,6 +150,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func onboarding() {
         window?.rootViewController = UIViewController.onboarding()
+    }
+    
+    func onboarding(from:UIViewController) {
+        let onboardingController = UIViewController.onboarding()
+        UIView.transitionFromView(from.view, toView:onboardingController.view, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve) { (complete) -> Void in
+            self.window?.rootViewController = onboardingController
+        }
+    }
+    
+    func login(from:UIViewController) {
+        let loginController = UIStoryboard.main().instantiateInitialViewController() as! UITabBarController
+        UIView.transitionFromView(from.view, toView:loginController.view, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve) { (complete) -> Void in
+            self.window?.rootViewController = loginController
+        }
+    }
+    
+    func signup(from:UIViewController) {
+        let signupController = UIViewController.signup()
+        UIView.transitionFromView(from.view, toView:signupController.view, duration: 0.5, options: UIViewAnimationOptions.TransitionCrossDissolve) { (complete) -> Void in
+            self.window?.rootViewController = signupController
+        }
+    }
+    
+    func setAppearance() {
+        UITabBar.appearance().translucent = false
+        UITabBar.appearance().backgroundColor = UIColor.whiteColor()
+        UITabBar.appearance().shadowImage = nil
     }
 
 }
