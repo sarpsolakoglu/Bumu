@@ -9,17 +9,22 @@ let Parse_Application_Id = "REFtmXF6CAGQtVeCaQkwj8zCwSBG00l9LtBJ1oV6"
 let Parse_Client_Key = "6UMZz7zH1MNhcUCIfx96V96xFOEhKrjQPYiw2aH7"
 
 //MARK:View Controller Identifiers
-let MainTabBarController_Identifier = "MainTabBarController"
-let LoginViewController_Identifier = "LoginViewController"
-let OnboardingContainerController_Identifier = "onboarding_container"
-let OnboardingPageOneController_Identifier = "onboarding_page_one"
-let OnboardingPageTwoController_Identifier = "onboarding_page_two"
-let OnboardingPageThreeController_Identifier = "onboarding_page_three"
+let ID_VC_MainTabBarController = "MainTabBarController"
+let ID_VC_LoginViewController = "LoginViewController"
+let ID_VC_OnboardingContainerController = "onboarding_container"
+let ID_VC_OnboardingPageOneController = "onboarding_page_one"
+let ID_VC_OnboardingPageTwoController = "onboarding_page_two"
+let ID_VC_OnboardingPageThreeController = "onboarding_page_three"
 
 //MARK:Storyboard Identifiers
-let OnboardingStoryboard_Identifier = "Onboarding"
-let MainStoryboard_Identifier = "Main"
-let SignupStoryboard_Identifier = "Signup"
+let ID_SB_OnboardingStoryboard = "Onboarding"
+let ID_SB_MainStoryboard = "Main"
+let ID_SB_SignupStoryboard = "Signup"
+
+//MARK:Segue Identifiers
+let ID_S_MessagingContainerInboxSegue = "messagingContainerInboxSegue"
+let ID_S_MessagingContainerOutboxSegue = "messagingContainerOutboxSegue"
+let ID_S_MessagingContainerEmbedSegue = "messagingContainerEmbedSegue"
 
 //MARK:Facebook
 let fb_permissions = ["public_profile","user_friends","email"]

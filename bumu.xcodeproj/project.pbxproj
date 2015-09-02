@@ -23,6 +23,11 @@
 		E9596AE81B8B51EF00B13C4A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE31B8B51EF00B13C4A /* BaseViewController.swift */; };
 		E9596AE91B8B51EF00B13C4A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE51B8B51EF00B13C4A /* MainTabBarController.swift */; };
 		E9596AEA1B8B51EF00B13C4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE71B8B51EF00B13C4A /* LoginViewController.swift */; };
+		E97487211B976E9B006E2011 /* MessagingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487201B976E9B006E2011 /* MessagingContainerViewController.swift */; };
+		E97487231B976EB0006E2011 /* MessagingInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487221B976EB0006E2011 /* MessagingInboxViewController.swift */; };
+		E97487251B976EC0006E2011 /* MessagingOutboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487241B976EC0006E2011 /* MessagingOutboxViewController.swift */; };
+		E97487271B977038006E2011 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487261B977038006E2011 /* EmptySegue.swift */; };
+		E97487291B9791EC006E2011 /* MessagingTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487281B9791EC006E2011 /* MessagingTopViewController.swift */; };
 		E98073D11B8BB10000145FAF /* Dosis-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CA1B8BB10000145FAF /* Dosis-Bold.ttf */; };
 		E98073D21B8BB10000145FAF /* Dosis-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CB1B8BB10000145FAF /* Dosis-ExtraBold.ttf */; };
 		E98073D41B8BB10000145FAF /* Dosis-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98073CD1B8BB10000145FAF /* Dosis-Light.ttf */; };
@@ -78,6 +83,11 @@
 		E9596AE31B8B51EF00B13C4A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E9596AE51B8B51EF00B13C4A /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E9596AE71B8B51EF00B13C4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E97487201B976E9B006E2011 /* MessagingContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingContainerViewController.swift; sourceTree = "<group>"; };
+		E97487221B976EB0006E2011 /* MessagingInboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingInboxViewController.swift; sourceTree = "<group>"; };
+		E97487241B976EC0006E2011 /* MessagingOutboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingOutboxViewController.swift; sourceTree = "<group>"; };
+		E97487261B977038006E2011 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
+		E97487281B9791EC006E2011 /* MessagingTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingTopViewController.swift; sourceTree = "<group>"; };
 		E98073CA1B8BB10000145FAF /* Dosis-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.ttf"; sourceTree = "<group>"; };
 		E98073CB1B8BB10000145FAF /* Dosis-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.ttf"; sourceTree = "<group>"; };
 		E98073CD1B8BB10000145FAF /* Dosis-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Light.ttf"; sourceTree = "<group>"; };
@@ -130,6 +140,7 @@
 				E985173F1B8C90EB0091481A /* Utils.swift */,
 				E9D82E8C1B8E4B3F0062A844 /* FacebookUtils.swift */,
 				E9398DBF1B8EFA130096A955 /* ColorUtils.swift */,
+				E97487261B977038006E2011 /* EmptySegue.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -270,6 +281,10 @@
 			isa = PBXGroup;
 			children = (
 				E9596AE51B8B51EF00B13C4A /* MainTabBarController.swift */,
+				E97487201B976E9B006E2011 /* MessagingContainerViewController.swift */,
+				E97487221B976EB0006E2011 /* MessagingInboxViewController.swift */,
+				E97487241B976EC0006E2011 /* MessagingOutboxViewController.swift */,
+				E97487281B9791EC006E2011 /* MessagingTopViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -497,7 +512,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9368CC51B1900A9009E3D1B /* AppDelegate.swift in Sources */,
+				E97487291B9791EC006E2011 /* MessagingTopViewController.swift in Sources */,
+				E97487251B976EC0006E2011 /* MessagingOutboxViewController.swift in Sources */,
 				E9596AE11B8B4DB200B13C4A /* StoryboardUtils.swift in Sources */,
+				E97487231B976EB0006E2011 /* MessagingInboxViewController.swift in Sources */,
 				E98517341B8C67B90091481A /* SignupViewController.swift in Sources */,
 				E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */,
 				E9596AE91B8B51EF00B13C4A /* MainTabBarController.swift in Sources */,
@@ -507,9 +525,11 @@
 				E9398DC21B8EFCE70096A955 /* ElasticView.swift in Sources */,
 				E9596AEA1B8B51EF00B13C4A /* LoginViewController.swift in Sources */,
 				E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */,
+				E97487211B976E9B006E2011 /* MessagingContainerViewController.swift in Sources */,
 				E985173E1B8C8A4F0091481A /* User.swift in Sources */,
 				E9398DC01B8EFA130096A955 /* ColorUtils.swift in Sources */,
 				E98517361B8C69700091481A /* ObjectUtils.swift in Sources */,
+				E97487271B977038006E2011 /* EmptySegue.swift in Sources */,
 				E9398DBE1B8EF6400096A955 /* BaseView.swift in Sources */,
 				70B39FB01C9EEECF418D8300 /* Constants.swift in Sources */,
 				E9596AE81B8B51EF00B13C4A /* BaseViewController.swift in Sources */,

@@ -176,7 +176,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setAppearance() {
         UITabBar.appearance().translucent = false
         UITabBar.appearance().backgroundColor = UIColor.whiteColor()
-        UITabBar.appearance().shadowImage = nil
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
     }
 
 }

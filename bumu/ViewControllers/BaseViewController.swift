@@ -9,6 +9,11 @@
 import UIKit
 
 class BaseViewController : UIViewController {
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.appBackgroundColor()
+    }
     
     func registerForKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)

@@ -14,13 +14,13 @@ extension UIViewController {
     class func onboarding()-> UIViewController {
         let storyboard = UIStoryboard.onboarding()
         
-        let onboardingContainer = storyboard.instantiateViewControllerWithIdentifier(OnboardingContainerController_Identifier) as! BWWalkthroughViewController
+        let onboardingContainer = storyboard.instantiateViewControllerWithIdentifier(ID_VC_OnboardingContainerController) as! BWWalkthroughViewController
         
-        let onboardingOne: BWWalkthroughPageViewController = storyboard.instantiateViewControllerWithIdentifier(OnboardingPageOneController_Identifier) as! BWWalkthroughPageViewController
+        let onboardingOne: BWWalkthroughPageViewController = storyboard.instantiateViewControllerWithIdentifier(ID_VC_OnboardingPageOneController) as! BWWalkthroughPageViewController
         
-        let onboardingTwo: BWWalkthroughPageViewController = storyboard.instantiateViewControllerWithIdentifier(OnboardingPageTwoController_Identifier) as! BWWalkthroughPageViewController
+        let onboardingTwo: BWWalkthroughPageViewController = storyboard.instantiateViewControllerWithIdentifier(ID_VC_OnboardingPageTwoController) as! BWWalkthroughPageViewController
         
-        let onboardingThree: BWWalkthroughPageViewController = storyboard.instantiateViewControllerWithIdentifier(OnboardingPageThreeController_Identifier) as! BWWalkthroughPageViewController
+        let onboardingThree: BWWalkthroughPageViewController = storyboard.instantiateViewControllerWithIdentifier(ID_VC_OnboardingPageThreeController) as! BWWalkthroughPageViewController
         
         onboardingContainer.addViewController(onboardingOne)
         onboardingContainer.addViewController(onboardingTwo)
@@ -59,13 +59,13 @@ extension UIViewController {
 
 extension UIStoryboard {
     class func onboarding() -> UIStoryboard {
-        return UIStoryboard(name:OnboardingStoryboard_Identifier, bundle:nil)
+        return UIStoryboard(name:ID_SB_OnboardingStoryboard, bundle:nil)
     }
     class func main() -> UIStoryboard {
-        return UIStoryboard(name:MainStoryboard_Identifier, bundle:nil)
+        return UIStoryboard(name:ID_SB_MainStoryboard, bundle:nil)
     }
     class func signup() -> UIStoryboard {
-        return UIStoryboard(name:SignupStoryboard_Identifier, bundle:nil)
+        return UIStoryboard(name:ID_SB_SignupStoryboard, bundle:nil)
     }
 }
 

@@ -30,11 +30,13 @@ class MainTabBarController : UITabBarController{
         
         view.addSubview(button)
         
+        tabBar.itemPositioning = .Automatic
+        
         if let items = tabBar.items as? Array<UITabBarItem> {
             items[0].image = UIImage(named: "bm_tb_message")?.imageWithRenderingMode(.AlwaysOriginal)
             items[0].selectedImage = UIImage(named: "bm_tb_message_s")?.imageWithRenderingMode(.AlwaysOriginal)
-            items[2].image = UIImage(named: "bm_tb_friend")?.imageWithRenderingMode(.AlwaysOriginal)
-            items[2].selectedImage = UIImage(named: "bm_tb_friend_s")?.imageWithRenderingMode(.AlwaysOriginal)
+            items[1].image = UIImage(named: "bm_tb_friend")?.imageWithRenderingMode(.AlwaysOriginal)
+            items[1].selectedImage = UIImage(named: "bm_tb_friend_s")?.imageWithRenderingMode(.AlwaysOriginal)
         }
     }
 }
