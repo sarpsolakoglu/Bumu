@@ -3,9 +3,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'bumu' do
+#API
+pod 'Moya'
 #facebook
-pod 'FBSDKCoreKit', '~> 4.6'
-pod 'FBSDKLoginKit', '~> 4.6'
 pod 'FBSDKShareKit', '~> 4.6'
 #parse
 pod 'Parse', '~> 1.8'
