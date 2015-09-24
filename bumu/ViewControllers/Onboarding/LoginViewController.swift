@@ -27,16 +27,15 @@ class LoginViewController: BWWalkthroughViewController {
     
     @IBAction func login(sender:AnyObject?) {
         
-        var permissions = ["public_profile","user_friends","user_birthday","email"];
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions, block: {[unowned self] (user, error) -> Void in
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(fb_permissions, block: {(user, error) -> Void in
             if let user = user  {
                 if user.isNew {
-                    println("user signed up")
+                    print("user signed up")
                 } else {
-                    println("user logged in")
+                    print("user logged in")
                 }
             } else {
-                println("error")
+                print("error")
             }
         });
     }

@@ -24,7 +24,7 @@ class MessagingContainerViewController: UIViewController {
             currentSegueIdentifier = ID_S_MessagingContainerInboxSegue
         }
         
-        performSegueWithIdentifier(currentSegueIdentifier, sender: self)
+        performSegueWithIdentifier(currentSegueIdentifier!, sender: self)
     }
     
     
@@ -33,19 +33,19 @@ class MessagingContainerViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let destVc = segue.destinationViewController as! UIViewController
+        let destVc = segue.destinationViewController 
         let destView = destVc.view
         
         if childViewControllers.count == 0 {
             addChildViewController(destVc)
-            destView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            destView.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(destView)
             destView.snp_makeConstraints(closure: { (make) -> Void in
                 make.edges.equalTo(self.view)
             })
             destVc.didMoveToParentViewController(self)
         } else {
-            self.swapFromViewController(childViewControllers[0] as! UIViewController, toVC:destVc)
+            self.swapFromViewController(childViewControllers[0] , toVC:destVc)
         }
     }
     
@@ -72,7 +72,7 @@ class MessagingContainerViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(currentSegueIdentifier, forKey: "selection")
         defaults.synchronize()
-        performSegueWithIdentifier(currentSegueIdentifier, sender: self)
+        performSegueWithIdentifier(currentSegueIdentifier!, sender: self)
     }
 
 }

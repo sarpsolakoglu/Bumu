@@ -30,7 +30,6 @@ class SignupTextField : UITextField {
     
     func addStatusLayer() {
         statusLayer = CALayer()
-        let viewBounds = bounds
         statusLayer.frame = CGRectMake(0, bounds.height - 2, bounds.width, 2)
         self.layer.addSublayer(statusLayer)
         setState(.Default)
@@ -147,7 +146,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
     override func keyboardWillShow(notification:NSNotification) -> () {
    
         if let info = notification.userInfo,
-            keyboardSize = info[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size,
+            keyboardSize = info[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size,
         duration = info[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue,
             curveInt = info[UIKeyboardAnimationCurveUserInfoKey]?.integerValue
         {
@@ -206,21 +205,21 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func signUpPressed(sender: AnyObject) {
         
-        if count(emailField.text) == 0 {
+        if emailField.text?.characters.count == 0 {
             showError(Utils.localizedString("E-posta alanı boş olamaz."))
             emailField.setState(.Error)
             return
         }
         
-        if count(usernameField.text) == 0 {
+        if usernameField.text?.characters.count == 0 {
             showError(Utils.localizedString("Kullanıcı adı boş olamaz."))
             usernameField.setState(.Error)
             return
         }
         
         let user = User.currentUser()!
-        user.email = emailField.text.trim()
-        user.bumuName = usernameField.text.trim()
+        user.email = emailField.text!.trim()
+        user.bumuName = usernameField.text!.trim()
         
         usernameField.setState(.Default)
         emailField.setState(.Default)
@@ -231,7 +230,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
         signupButton.startAnimation()
         query?.findObjectsInBackgroundWithBlock({ (result, error) -> Void in
             if let users = result as? Array<User> {
-                if count(users) > 0 {
+                if users.count > 0 {
                     self.showError(Utils.localizedString("Bu kullanıcı adı kullanılıyor."))
                     self.usernameField.setState(.Error)
                     self.signupButton.stopAnimation()

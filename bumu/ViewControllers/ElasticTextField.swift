@@ -37,7 +37,7 @@ class ElasticTextField: UITextField {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         elasticView.touchesBegan(touches, withEvent: event)
     }
 

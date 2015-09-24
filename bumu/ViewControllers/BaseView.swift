@@ -13,7 +13,7 @@ class ButtonWithActivity : UIButton {
     
     var activityIndicator : UIActivityIndicatorView!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -29,7 +29,7 @@ class ButtonWithActivity : UIButton {
         addSubview(activityIndicator)
         activityIndicator.snp_makeConstraints { (make) -> Void in
             make.centerY.equalTo(self)
-            make.trailing.equalTo(self.snp_right).offset(-14)
+            make.trailing.equalTo(self.snp_trailing).offset(-14)
         }
     }
     

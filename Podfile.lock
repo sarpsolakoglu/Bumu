@@ -1,56 +1,59 @@
 PODS:
-  - Bolts (1.2.0):
-    - Bolts/AppLinks (= 1.2.0)
-    - Bolts/Tasks (= 1.2.0)
-  - Bolts/AppLinks (1.2.0):
+  - AMPopTip (0.9.12)
+  - Bolts (1.3.0):
+    - Bolts/AppLinks (= 1.3.0)
+    - Bolts/Tasks (= 1.3.0)
+  - Bolts/AppLinks (1.3.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.2.0)
+  - Bolts/Tasks (1.3.0)
   - CRToast (0.0.7)
-  - FBSDKCoreKit (4.5.1):
+  - FBSDKCoreKit (4.6.0):
     - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.5.1)
-    - FBSDKCoreKit/no-arc (= 4.5.1)
-  - FBSDKCoreKit/arc (4.5.1):
+    - FBSDKCoreKit/arc (= 4.6.0)
+    - FBSDKCoreKit/no-arc (= 4.6.0)
+  - FBSDKCoreKit/arc (4.6.0):
     - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.5.1):
+  - FBSDKCoreKit/no-arc (4.6.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.5.1):
+  - FBSDKLoginKit (4.6.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.5.1):
+  - FBSDKShareKit (4.6.0):
     - FBSDKCoreKit
-  - Parse (1.7.5.3):
-    - Bolts/Tasks (>= 1.2.0)
-  - ParseFacebookUtilsV4 (1.7.5.3):
-    - Bolts/Tasks (>= 1.2.0)
+  - Parse (1.8.5):
+    - Bolts/Tasks (>= 1.2.2)
+  - ParseFacebookUtilsV4 (1.8.5):
+    - Bolts/Tasks (>= 1.2.2)
     - FBSDKCoreKit (~> 4.0)
     - FBSDKLoginKit (~> 4.0)
-    - Parse (~> 1.7.5.3)
+    - Parse (~> 1.8.4)
   - pop (1.0.7)
-  - SnapKit (0.13.0)
+  - SnapKit (0.15.0)
   - TAPageControl (0.2.0)
 
 DEPENDENCIES:
+  - AMPopTip
   - CRToast (~> 0.0.7)
-  - FBSDKCoreKit (~> 4.5)
-  - FBSDKLoginKit (~> 4.5)
-  - FBSDKShareKit (~> 4.5)
-  - Parse (~> 1.7)
-  - ParseFacebookUtilsV4 (~> 1.7)
+  - FBSDKCoreKit (~> 4.6)
+  - FBSDKLoginKit (~> 4.6)
+  - FBSDKShareKit (~> 4.6)
+  - Parse (~> 1.8)
+  - ParseFacebookUtilsV4 (~> 1.8)
   - pop
-  - SnapKit
+  - SnapKit (~> 0.15.0)
   - TAPageControl
 
 SPEC CHECKSUMS:
-  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  AMPopTip: 3c98a9b38148868366b57765064bd9565f653038
+  Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
-  FBSDKCoreKit: f335eaf6865e1e1597dee1debfb533045500da47
-  FBSDKLoginKit: 225cc9a388a92916ee3f3bb14422017b6e44b65b
-  FBSDKShareKit: 642034ac9f30793dfd897851b724bb4281750266
-  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
-  ParseFacebookUtilsV4: ea5db22e87b91cbf99b9d156642e2b97a4db7d51
+  FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
+  FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
+  FBSDKShareKit: f474f1123791e215d0299b98b3ee92ddd9187d86
+  Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
+  ParseFacebookUtilsV4: cc51857cf984c6fc743e7f17c2ddebdb6f02f963
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
-  SnapKit: 69fe274c71511df89a5591c11437a8b826bfa9eb
+  SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   TAPageControl: fd11d779bbb5c2464ca2f55dde9e288213ea8a9b
 
 COCOAPODS: 0.37.2

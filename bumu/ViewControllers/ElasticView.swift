@@ -39,7 +39,7 @@ class ElasticView: UIView {
         setupComponents()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupComponents()
     }
@@ -71,10 +71,10 @@ class ElasticView: UIView {
     private func bezierPathForControlPoints()->CGPathRef {
         let path = UIBezierPath()
         
-        let top = topControlPointView.layer.presentationLayer().position
-        let left = leftControlPointView.layer.presentationLayer().position
-        let bottom = bottomControlPointView.layer.presentationLayer().position
-        let right = rightControlPointView.layer.presentationLayer().position
+        let top = topControlPointView.layer.presentationLayer()!.position
+        let left = leftControlPointView.layer.presentationLayer()!.position
+        let bottom = bottomControlPointView.layer.presentationLayer()!.position
+        let right = rightControlPointView.layer.presentationLayer()!.position
         
         let width = frame.size.width
         let height = frame.size.height
@@ -102,13 +102,13 @@ class ElasticView: UIView {
     
     func animateControlPoints() {
         startUpdateLoop()
-        UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1.5, options: nil, animations: { () -> Void in
+        UIView.animateWithDuration(0.25, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1.5, options: [], animations: { () -> Void in
             self.topControlPointView.center.y -= self.overshootAmount
             self.leftControlPointView.center.x -= self.overshootAmount
             self.bottomControlPointView.center.y += self.overshootAmount
             self.rightControlPointView.center.x += self.overshootAmount
             }, completion: { _ in
-                UIView.animateWithDuration(0.45, delay: 0.0, usingSpringWithDamping: 0.15, initialSpringVelocity: 5.5, options: nil, animations: { () -> Void in
+                UIView.animateWithDuration(0.45, delay: 0.0, usingSpringWithDamping: 0.15, initialSpringVelocity: 5.5, options: [], animations: { () -> Void in
                     self.positionControlPoints()
                     }, completion: { _ in
                         self.stopUpdateLoop()
@@ -116,7 +116,7 @@ class ElasticView: UIView {
         })
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         animateControlPoints()
     }
 

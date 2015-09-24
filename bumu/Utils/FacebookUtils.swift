@@ -27,16 +27,16 @@ class FacebookUtils {
                     completion(error:err_bumu_unknown)
                 }
             } else {
-                if let errorType = error!.userInfo?["error"]?["type"] as? String {
+                if let errorType = error!.userInfo["error"]?["type"] as? String {
                     if errorType == "OAuthException" {
-                        println("The facebook session was invalidated")
+                        print("The facebook session was invalidated")
                         Utils.appDelegate().logout()
                     } else {
-                        println("error")
+                        print("error")
                         completion(error: error)
                     }
                 } else {
-                    println("error")
+                    print("error")
                     completion(error: error)
                 }
             }

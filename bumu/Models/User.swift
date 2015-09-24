@@ -13,7 +13,7 @@ public enum ProfilePhotoSize : String {
     case Small = "small", Medium = "medium", Large = "large"
 }
 
-class User: PFUser, PFSubclassing {
+class User: PFUser {
 
     var isActive : Bool? {
         get { return self["isActive"] as? Bool }

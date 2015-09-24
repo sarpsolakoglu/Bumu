@@ -65,12 +65,12 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
     
     private let scrollview:UIScrollView!
     private var controllers:[UIViewController]!
-    private var lastViewConstraint:NSArray?
+    private var lastViewConstraint:[NSLayoutConstraint]?
     
     
     // MARK: - Overrides -
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         // Setup the scrollview
         scrollview = UIScrollView()
         scrollview.showsHorizontalScrollIndicator = false
@@ -95,15 +95,15 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
         // Initialize UIScrollView
         
         scrollview.delegate = self
-        scrollview.setTranslatesAutoresizingMaskIntoConstraints(false)
+        scrollview.translatesAutoresizingMaskIntoConstraints = false
         scrollview.pagingEnabled = true
         
         view.insertSubview(scrollview, atIndex: 0) //scrollview is inserted as first view of the hierarchy
         
         // Set scrollview related constraints
         
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[scrollview]-0-|", options:nil, metrics: nil, views: ["scrollview":scrollview]))
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[scrollview]-0-|", options:nil, metrics: nil, views: ["scrollview":scrollview]))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[scrollview]-0-|", options:[], metrics: nil, views: ["scrollview":scrollview]))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[scrollview]-0-|", options:[], metrics: nil, views: ["scrollview":scrollview]))
         
         pageControl = TAPageControl()
         view.addSubview(pageControl!)
@@ -164,7 +164,7 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
         
         // Setup the viewController view
         
-        vc.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
         scrollview.addSubview(vc.view)
         
         // Constraints
@@ -173,14 +173,14 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
         
         // - Generic cnst
         
-        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[view(h)]", options:nil, metrics: metricDict, views: ["view":vc.view]))
-        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[view(w)]", options:nil, metrics: metricDict, views: ["view":vc.view]))
-        scrollview.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]|", options:nil, metrics: nil, views: ["view":vc.view,]))
+        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[view(h)]", options:[], metrics: metricDict, views: ["view":vc.view]))
+        vc.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[view(w)]", options:[], metrics: metricDict, views: ["view":vc.view]))
+        scrollview.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]|", options:[], metrics: nil, views: ["view":vc.view,]))
         
         // cnst for position: 1st element
         
         if controllers.count == 1{
-            scrollview.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]", options:nil, metrics: nil, views: ["view":vc.view,]))
+            scrollview.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]", options:[], metrics: nil, views: ["view":vc.view,]))
             
             // cnst for position: other elements
             
@@ -189,13 +189,13 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
             let previousVC = controllers[controllers.count-2]
             let previousView = previousVC.view;
             
-            scrollview.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[previousView]-0-[view]", options:nil, metrics: nil, views: ["previousView":previousView,"view":vc.view]))
+            NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[previousView]-0-[view]", options:[], metrics: nil, views: ["previousView":previousView,"view":vc.view]))
             
             if let cst = lastViewConstraint{
-                scrollview.removeConstraints(cst as [AnyObject])
+                NSLayoutConstraint.deactivateConstraints(cst)
             }
-            lastViewConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[view]-0-|", options:nil, metrics: nil, views: ["view":vc.view])
-            scrollview.addConstraints(lastViewConstraint! as [AnyObject])
+            lastViewConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[view]-0-|", options:[], metrics: nil, views: ["view":vc.view])
+            NSLayoutConstraint.activateConstraints(lastViewConstraint!)
         }
     }
 
@@ -251,11 +251,11 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
     
     /* WIP */
     override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        println("CHANGE")
+        print("CHANGE")
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        println("SIZE")
+        print("SIZE")
     }
     
     //MARK: Own additions
@@ -266,14 +266,14 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
             if let user = user as? User {
                 if user.isNew {
                     Utils.appDelegate().signup(self)
-                    println("user needs to signup")
+                    print("user needs to signup")
                 } else {
                     if user.isActive != nil && user.isActive == true {
                         Utils.appDelegate().login(self)
-                        println("logged in user")
+                        print("logged in user")
                     } else {
                         Utils.appDelegate().signup(self)
-                        println("user needs to complete signup")
+                        print("user needs to complete signup")
                     }
                 }
             } else {

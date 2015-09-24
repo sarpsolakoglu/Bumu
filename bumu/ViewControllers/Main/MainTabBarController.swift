@@ -14,7 +14,7 @@ class MainTabBarController : UITabBarController{
         
         let buttonImage = UIImage(named: "bm_tb_middle")!
         
-        var button: UIButton = UIButton(frame: CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height))
+        let button: UIButton = UIButton(frame: CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height))
         
         button.setBackgroundImage(buttonImage, forState: .Normal)
         button.setBackgroundImage(buttonImage, forState: .Highlighted)
@@ -24,7 +24,6 @@ class MainTabBarController : UITabBarController{
         if heightDifference < 0 {
             button.center = tabBar.center
         } else {
-            let bCenter = tabBar.center
             button.center = CGPointMake(tabBar.center.x, tabBar.center.y - heightDifference/2.0)
         }
         
@@ -32,7 +31,7 @@ class MainTabBarController : UITabBarController{
         
         tabBar.itemPositioning = .Automatic
         
-        if let items = tabBar.items as? Array<UITabBarItem> {
+        if let items = tabBar.items {
             items[0].image = UIImage(named: "bm_tb_message")?.imageWithRenderingMode(.AlwaysOriginal)
             items[0].selectedImage = UIImage(named: "bm_tb_message_s")?.imageWithRenderingMode(.AlwaysOriginal)
             items[1].image = UIImage(named: "bm_tb_friend")?.imageWithRenderingMode(.AlwaysOriginal)

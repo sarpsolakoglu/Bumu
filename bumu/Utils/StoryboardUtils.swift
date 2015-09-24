@@ -31,7 +31,7 @@ extension UIViewController {
     
     class func signup() -> UIViewController {
         let storyboard = UIStoryboard.signup()
-        return storyboard.instantiateViewControllerWithIdentifier(SignupViewController.className) as! UIViewController
+        return storyboard.instantiateViewControllerWithIdentifier(SignupViewController.className) 
     }
     
     func showError(text:String) {
