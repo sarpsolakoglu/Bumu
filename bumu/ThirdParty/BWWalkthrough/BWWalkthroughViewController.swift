@@ -8,7 +8,6 @@
 import UIKit
 import TAPageControl
 import SnapKit
-import ParseFacebookUtilsV4
 
 // MARK: - Protocols -
 
@@ -218,7 +217,7 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
     
     func scrollViewDidScroll(sv: UIScrollView) {
         
-        for var i=0; i < controllers.count; i++ {
+        for i in 0..<controllers.count {
             
             if let vc = controllers[i] as? BWWalkthroughPage{
             
@@ -262,6 +261,7 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
     
     @IBAction func facebookButtonTouched(sender: AnyObject) {
         facebookButton.startAnimation()
+        /*
         PFFacebookUtils.logInInBackgroundWithReadPermissions(fb_permissions, block: {(user, error) -> Void in
             if let user = user as? User {
                 if user.isNew {
@@ -280,7 +280,7 @@ class BWWalkthroughViewController: UIViewController, UIScrollViewDelegate{
                 self.showError(Utils.localizedString("Facebook ile bağlantı başarısız."))
             }
             self.facebookButton.stopAnimation()
-        });
+        });*/
     }
     
     @IBAction func infoButtonTouched(sender: AnyObject) {

@@ -1,65 +1,71 @@
 PODS:
-  - Alamofire (2.0.2)
-  - AMPopTip (0.9.12)
-  - Bolts (1.3.0):
-    - Bolts/AppLinks (= 1.3.0)
-    - Bolts/Tasks (= 1.3.0)
-  - Bolts/AppLinks (1.3.0):
+  - Alamofire (3.3.0)
+  - AMPopTip (0.10.2)
+  - AWSCognito (2.3.6):
+    - AWSCore (= 2.3.6)
+  - AWSCore (2.3.6)
+  - AWSLambda (2.3.6):
+    - AWSCore (= 2.3.6)
+  - AWSMobileAnalytics (2.3.6):
+    - AWSCore (= 2.3.6)
+  - AWSS3 (2.3.6):
+    - AWSCore (= 2.3.6)
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.3.0)
-  - CRToast (0.0.7)
-  - FBSDKCoreKit (4.6.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.6.0)
-    - FBSDKCoreKit/no-arc (= 4.6.0)
-  - FBSDKCoreKit/arc (4.6.0):
-    - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.6.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.6.0):
+  - Bolts/Tasks (1.7.0)
+  - CRToast (0.0.9)
+  - FBSDKCoreKit (4.10.1):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.10.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.6.0):
+  - FBSDKShareKit (4.10.1):
     - FBSDKCoreKit
-  - Moya (2.4.1):
-    - Moya/Core (= 2.4.1)
-  - Moya/Core (2.4.1):
-    - Alamofire (~> 2.0)
-  - Parse (1.8.5):
-    - Bolts/Tasks (>= 1.2.2)
-  - ParseFacebookUtilsV4 (1.8.5):
-    - Bolts/Tasks (>= 1.2.2)
-    - FBSDKCoreKit (~> 4.0)
-    - FBSDKLoginKit (~> 4.0)
-    - Parse (~> 1.8.4)
-  - pop (1.0.7)
+  - Moya (6.3.1):
+    - Moya/Core (= 6.3.1)
+  - Moya/Core (6.3.1):
+    - Alamofire (~> 3.0)
+    - Result (~> 1.0)
+  - pop (1.0.9)
+  - Result (1.0.2)
   - SnapKit (0.15.0)
   - TAPageControl (0.2.0)
 
 DEPENDENCIES:
   - AMPopTip
+  - AWSCognito
+  - AWSCore
+  - AWSLambda
+  - AWSMobileAnalytics
+  - AWSS3
   - CRToast (~> 0.0.7)
-  - FBSDKShareKit (~> 4.6)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
   - Moya
-  - Parse (~> 1.8)
-  - ParseFacebookUtilsV4 (~> 1.8)
   - pop
   - SnapKit (~> 0.15.0)
   - TAPageControl
 
 SPEC CHECKSUMS:
-  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
-  AMPopTip: 3c98a9b38148868366b57765064bd9565f653038
-  Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
-  CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
-  FBSDKCoreKit: 9954492d90c5fd65ae831395697a1660360d61f1
-  FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
-  FBSDKShareKit: f474f1123791e215d0299b98b3ee92ddd9187d86
-  Moya: aa0fba7f9c98a0bcb95f2d4222ee848dcb0e4b8e
-  Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
-  ParseFacebookUtilsV4: cc51857cf984c6fc743e7f17c2ddebdb6f02f963
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  Alamofire: 9054db4a1b1ca9e363223183e01cea380159a27c
+  AMPopTip: 0788a9452806049e3aa0d6d09324606fc41ea646
+  AWSCognito: af54fe65171c7c994c134e5d29b1ee60ee234825
+  AWSCore: 917d84b32974136194a905b98c0ae25c9f3350b8
+  AWSLambda: 9882d7bf98d368fa7e0c98d0f6e15dbbd4eb0e26
+  AWSMobileAnalytics: 56ce9e671640fbd702f8ce52b0f128e525f3e51c
+  AWSS3: 1caaf6b45100503fecf3d418c394519a89409a74
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
+  FBSDKCoreKit: d2aaed5e9ab7d8d6301c533376a1fbff1cf3deb5
+  FBSDKLoginKit: 699ff169080e3072de4b9b0faca90bf23dc36deb
+  FBSDKShareKit: 2fd887cce0056bdda91f99b2021d724a4fed8e88
+  Moya: 852e26948a3771355ddf0f0109ac779b6fc30f28
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   TAPageControl: fd11d779bbb5c2464ca2f55dde9e288213ea8a9b
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0

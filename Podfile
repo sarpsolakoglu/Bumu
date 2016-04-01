@@ -6,10 +6,16 @@ target 'bumu' do
 #API
 pod 'Moya'
 #facebook
-pod 'FBSDKShareKit', '~> 4.6'
-#parse
-pod 'Parse', '~> 1.8'
-pod 'ParseFacebookUtilsV4', '~> 1.8'
+pod 'FBSDKShareKit'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+#AWS
+pod 'AWSCore'
+pod 'AWSLambda'
+pod 'AWSMobileAnalytics'
+pod 'AWSS3'
+pod 'AWSCognito'
+
 #ui
 pod 'TAPageControl'
 pod 'CRToast', '~> 0.0.7'

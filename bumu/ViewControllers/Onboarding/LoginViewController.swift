@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import ParseFacebookUtilsV4
-import Parse
-import Bolts
 
 
 class LoginViewController: BWWalkthroughViewController {

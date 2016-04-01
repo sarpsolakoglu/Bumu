@@ -64,7 +64,7 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
     
     func walkthroughDidScroll(position: CGFloat, offset: CGFloat) {
         
-        for(var i = 0; i < subsWeights.count ;i++){
+        for i in 0 ..< subsWeights.count {
     
             if view.subviews[i].tag == 0 {
                 // Perform Transition/Scale/Rotate animations
@@ -85,7 +85,7 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
                 
                 // Animate alpha
                 if(animateAlpha){
-                    animationAlpha(i, offset)
+                    animationAlpha(i, offset: offset)
                 }
             }
             
@@ -95,13 +95,15 @@ class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage {
     
     // MARK: Animations (WIP)
     
-    private func animationAlpha(index:Int, var _ offset:CGFloat){
+    private func animationAlpha(index:Int, offset:CGFloat){
+        var off = offset
+        
         let cView = view.subviews[index] 
         
-        if(offset > 1.0){
-            offset = 1.0 + (1.0 - offset)
+        if(off > 1.0){
+            off = 1.0 + (1.0 - off)
         }
-        cView.alpha = (offset)
+        cView.alpha = (off)
     }
     
     private func animationCurve(index:Int, _ offset:CGFloat){

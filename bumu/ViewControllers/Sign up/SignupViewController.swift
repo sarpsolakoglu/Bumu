@@ -8,7 +8,6 @@
 
 import UIKit
 import FBSDKCoreKit
-import ParseFacebookUtilsV4
 import SnapKit
 
 enum SignupInputFieldState {
@@ -79,7 +78,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         setupView()
-        
+        /*
         FacebookUtils.getFacebookInfo { error in
             if error == nil {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -108,7 +107,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
                 //TODO:Error
                 Utils.appDelegate().logout()
             }
-        }
+        }*/
     }
     
     override func viewDidLayoutSubviews() {
@@ -216,7 +215,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
             usernameField.setState(.Error)
             return
         }
-        
+        /*
         let user = User.currentUser()!
         user.email = emailField.text!.trim()
         user.bumuName = usernameField.text!.trim()
@@ -250,7 +249,7 @@ class SignupViewController: BaseViewController, UITextFieldDelegate {
                     })
                 }
             }
-        })
+        })*/
     }
 
 }

@@ -23,6 +23,10 @@
 		E9596AE81B8B51EF00B13C4A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE31B8B51EF00B13C4A /* BaseViewController.swift */; };
 		E9596AE91B8B51EF00B13C4A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE51B8B51EF00B13C4A /* MainTabBarController.swift */; };
 		E9596AEA1B8B51EF00B13C4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9596AE71B8B51EF00B13C4A /* LoginViewController.swift */; };
+		E968D7331CAEC20E0099C3AF /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E968D7311CAEC20E0099C3AF /* AWSMobileClient.swift */; };
+		E968D7391CAEC72E0099C3AF /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E968D7381CAEC72E0099C3AF /* AWSMobileHubHelper.framework */; };
+		E968D73B1CAECC8D0099C3AF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E968D73A1CAECC8D0099C3AF /* libz.tbd */; };
+		E968D73D1CAECC9A0099C3AF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E968D73C1CAECC9A0099C3AF /* libsqlite3.tbd */; };
 		E97487211B976E9B006E2011 /* MessagingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487201B976E9B006E2011 /* MessagingContainerViewController.swift */; };
 		E97487231B976EB0006E2011 /* MessagingInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487221B976EB0006E2011 /* MessagingInboxViewController.swift */; };
 		E97487251B976EC0006E2011 /* MessagingOutboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97487241B976EC0006E2011 /* MessagingOutboxViewController.swift */; };
@@ -39,14 +43,13 @@
 		E98517341B8C67B90091481A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98517331B8C67B90091481A /* SignupViewController.swift */; };
 		E98517361B8C69700091481A /* ObjectUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98517351B8C69700091481A /* ObjectUtils.swift */; };
 		E98517371B8C6D0B0091481A /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98517391B8C6D0B0091481A /* Signup.storyboard */; };
-		E985173E1B8C8A4F0091481A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985173D1B8C8A4F0091481A /* User.swift */; };
 		E98517401B8C90EB0091481A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E985173F1B8C90EB0091481A /* Utils.swift */; };
 		E99D58351B90D26D0077A812 /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99D58341B90D26D0077A812 /* Main.xcassets */; };
 		E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */; };
 		E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AB82A61B19E6FE00174BBF /* BWWalkthroughViewController.swift */; };
 		E9BB72901B77BD3C00A0B98B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BB728F1B77BD3C00A0B98B /* Foundation.framework */; };
 		E9D82E8D1B8E4B3F0062A844 /* FacebookUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D82E8C1B8E4B3F0062A844 /* FacebookUtils.swift */; };
-		ECDA5DDBA5FB0D1A04EB5366 /* Pods_bumu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169F953F8A4D7457E4ECADD /* Pods_bumu.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		ECDA5DDBA5FB0D1A04EB5366 /* Pods_bumu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6169F953F8A4D7457E4ECADD /* Pods_bumu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,19 @@
 			remoteInfo = bumu;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E968D7371CAEC2330099C3AF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6169F953F8A4D7457E4ECADD /* Pods_bumu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bumu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +99,10 @@
 		E9596AE31B8B51EF00B13C4A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E9596AE51B8B51EF00B13C4A /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E9596AE71B8B51EF00B13C4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E968D7311CAEC20E0099C3AF /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		E968D7381CAEC72E0099C3AF /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileHubHelper.framework; path = bumu/Frameworks/AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		E968D73A1CAECC8D0099C3AF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E968D73C1CAECC9A0099C3AF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E97487201B976E9B006E2011 /* MessagingContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingContainerViewController.swift; sourceTree = "<group>"; };
 		E97487221B976EB0006E2011 /* MessagingInboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingInboxViewController.swift; sourceTree = "<group>"; };
 		E97487241B976EC0006E2011 /* MessagingOutboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingOutboxViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +120,6 @@
 		E98517331B8C67B90091481A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E98517351B8C69700091481A /* ObjectUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectUtils.swift; sourceTree = "<group>"; };
 		E98517381B8C6D0B0091481A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
-		E985173D1B8C8A4F0091481A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E985173F1B8C90EB0091481A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E99D58341B90D26D0077A812 /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
 		E9AB82A51B19E6FE00174BBF /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
@@ -115,8 +134,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E968D73D1CAECC9A0099C3AF /* libsqlite3.tbd in Frameworks */,
+				E968D73B1CAECC8D0099C3AF /* libz.tbd in Frameworks */,
 				E9BB72901B77BD3C00A0B98B /* Foundation.framework in Frameworks */,
 				ECDA5DDBA5FB0D1A04EB5366 /* Pods_bumu.framework in Frameworks */,
+				E968D7391CAEC72E0099C3AF /* AWSMobileHubHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +179,9 @@
 		CC8297198690C5DA5DA2552E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E968D73C1CAECC9A0099C3AF /* libsqlite3.tbd */,
+				E968D73A1CAECC8D0099C3AF /* libz.tbd */,
+				E968D7381CAEC72E0099C3AF /* AWSMobileHubHelper.framework */,
 				E9BB728F1B77BD3C00A0B98B /* Foundation.framework */,
 				6169F953F8A4D7457E4ECADD /* Pods_bumu.framework */,
 			);
@@ -297,6 +322,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		E968D7301CAEC2030099C3AF /* AmazonAWS */ = {
+			isa = PBXGroup;
+			children = (
+				E968D7311CAEC20E0099C3AF /* AWSMobileClient.swift */,
+			);
+			path = AmazonAWS;
+			sourceTree = "<group>";
+		};
 		E98073C91B8BB0F200145FAF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,7 +353,6 @@
 		E985173C1B8C8A220091481A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E985173D1B8C8A4F0091481A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +360,7 @@
 		E9AB82A31B19E6EE00174BBF /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				E968D7301CAEC2030099C3AF /* AmazonAWS */,
 				E9AB82A41B19E6FE00174BBF /* BWWalkthrough */,
 			);
 			path = ThirdParty;
@@ -355,6 +388,7 @@
 				E9368CBD1B1900A9009E3D1B /* Resources */,
 				1404CFB318833F98824943CB /* Copy Pods Resources */,
 				A568EB185917F35181544241 /* Embed Pods Frameworks */,
+				E968D7371CAEC2330099C3AF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -525,6 +559,7 @@
 				E9596AE11B8B4DB200B13C4A /* StoryboardUtils.swift in Sources */,
 				E97487231B976EB0006E2011 /* MessagingInboxViewController.swift in Sources */,
 				E98517341B8C67B90091481A /* SignupViewController.swift in Sources */,
+				E968D7331CAEC20E0099C3AF /* AWSMobileClient.swift in Sources */,
 				E9AB82A81B19E6FE00174BBF /* BWWalkthroughViewController.swift in Sources */,
 				E9596AE91B8B51EF00B13C4A /* MainTabBarController.swift in Sources */,
 				E98517401B8C90EB0091481A /* Utils.swift in Sources */,
@@ -534,7 +569,6 @@
 				E9596AEA1B8B51EF00B13C4A /* LoginViewController.swift in Sources */,
 				E9AB82A71B19E6FE00174BBF /* BWWalkthroughPageViewController.swift in Sources */,
 				E97487211B976E9B006E2011 /* MessagingContainerViewController.swift in Sources */,
-				E985173E1B8C8A4F0091481A /* User.swift in Sources */,
 				E9398DC01B8EFA130096A955 /* ColorUtils.swift in Sources */,
 				E98517361B8C69700091481A /* ObjectUtils.swift in Sources */,
 				E97487271B977038006E2011 /* EmptySegue.swift in Sources */,
@@ -701,6 +735,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/bumu/Frameworks",
+					"$(PROJECT_DIR)/bumu/ThirdParty/AmazonAWS",
 				);
 				INFOPLIST_FILE = bumu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -721,6 +756,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/bumu/Frameworks",
+					"$(PROJECT_DIR)/bumu/ThirdParty/AmazonAWS",
 				);
 				INFOPLIST_FILE = bumu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
